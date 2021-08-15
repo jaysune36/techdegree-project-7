@@ -1,0 +1,28 @@
+/*=====================================
+        FLEXBOX
+======================================*/
+.header-container,
+.aside-container,
+.main-container, 
+.flex {
+  display: flex;
+}
+
+.flex {
+  flex-direction: row;
+}
+
+.header-container {
+  justify-content: space-between;
+}
+
+.aside-container {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+
+.main-container {
+  flex-direction: column;
+}

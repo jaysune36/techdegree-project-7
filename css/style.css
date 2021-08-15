@@ -5,6 +5,9 @@
         UTILITIES PARTIALS
 ======================================*/
 /*=====================================
+        VARIABLES
+======================================*/
+/*=====================================
         MIXINS
 ======================================*/
 /*=====================================
@@ -356,11 +359,73 @@ template {
   box-sizing: border-box;
 }
 
+ul {
+  list-style-type: none;
+}
+
 /*=====================================
         COMPENENTS PARTIALS
 ======================================*/
 /*=====================================
+        LAYOUT
+======================================*/
+.header {
+  background-color: #AA99D6;
+}
+
+.aside {
+  background-color: #6C617A;
+}
+
+.aside-container,
+.main-container {
+  width: 90%;
+}
+
+/*=====================================
+        IMG COMPONENT
+======================================*/
+img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+/*=====================================
+        FLEXBOX
+======================================*/
+.header-container,
+.aside-container,
+.main-container,
+.flex {
+  display: flex;
+}
+
+.flex {
+  flex-direction: row;
+}
+
+.header-container {
+  justify-content: space-between;
+}
+
+.aside-container {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.main-container {
+  flex-direction: column;
+}
+
+/*=====================================
         GRID COMPONENT
 ======================================*/
+.header-container,
+.aside-container,
+.main-container {
+  margin: 0 auto;
+  width: 90%;
+}
 
 /*# sourceMappingURL=style.css.map */

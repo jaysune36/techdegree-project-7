@@ -1,11 +1,14 @@
 /*=====================================
-        GRID COMPONENT
+        LAYOUT
 ======================================*/
 
-.header-container,
+.header {
+  background-color: $primary-color; 
+}
+.aside {
+  background-color: $secondary-color;      
+}
 .aside-container,
 .main-container {
-  @include center;
   width: 90%;
 }
-
