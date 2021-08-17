@@ -5,8 +5,30 @@
 .header {
   background-color: $primary-color; 
 }
+.header-container {
+  padding: .5em 0;
+}
+.user-notify img, .user-notify svg {
+  padding: 0 .5em;
+}
+h1 {
+  font-size: 1.5rem;
+  color: $white-color;
+  font-weight: 200;
+}
+span {
+  font-weight: bold;
+}
+h2 {
+  font-size: 1rem;
+  font-weight: 200;
+  color: $white-color;
+}
 .aside {
-  background-color: $secondary-color;      
+  background-color: $secondary-color;
+  &-nav ul{
+    padding: .5em 0;
+  }      
 }
 .aside-container,
 .main-container {

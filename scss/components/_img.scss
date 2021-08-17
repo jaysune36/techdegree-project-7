@@ -3,7 +3,17 @@
 ======================================*/
 
 img {
-  width: 150px;
-  height: 150px;
+  width: 20%;
   border-radius: 50%;
+  .header-container & {
+    width: 10%;
+  }
+}
+
+svg {
+  width: 10%;
+  fill: $white-color;
+  .aside-nav & {
+    width: 50%;
+  }
 }

@@ -2,23 +2,29 @@
         FLEXBOX
 ======================================*/
 .header-container,
-.aside-container,
+.aside-nav ul,
 .main-container, 
-.flex {
+.user-notify {
   display: flex;
 }
 
-.flex {
+.user-notify {
   flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .header-container {
+  width: 90%;
   justify-content: space-between;
+  align-items: center
 }
 
-.aside-container {
+.aside-nav ul{
+  @include center;
+  width: 80%;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 

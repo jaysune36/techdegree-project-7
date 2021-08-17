@@ -359,6 +359,11 @@ template {
   box-sizing: border-box;
 }
 
+body {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
 ul {
   list-style-type: none;
 }
@@ -373,8 +378,35 @@ ul {
   background-color: #AA99D6;
 }
 
+.header-container {
+  padding: 0.5em 0;
+}
+
+.user-notify img, .user-notify svg {
+  padding: 0 0.5em;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 200;
+}
+
+span {
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 200;
+  color: #fff;
+}
+
 .aside {
   background-color: #6C617A;
+}
+.aside-nav ul {
+  padding: 0.5em 0;
 }
 
 .aside-container,
@@ -386,32 +418,48 @@ ul {
         IMG COMPONENT
 ======================================*/
 img {
-  width: 150px;
-  height: 150px;
+  width: 20%;
   border-radius: 50%;
+}
+.header-container img {
+  width: 10%;
+}
+
+svg {
+  width: 10%;
+  fill: #fff;
+}
+.aside-nav svg {
+  width: 50%;
 }
 
 /*=====================================
         FLEXBOX
 ======================================*/
 .header-container,
-.aside-container,
+.aside-nav ul,
 .main-container,
-.flex {
+.user-notify {
   display: flex;
 }
 
-.flex {
+.user-notify {
   flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .header-container {
+  width: 90%;
   justify-content: space-between;
+  align-items: center;
 }
 
-.aside-container {
+.aside-nav ul {
+  margin: 0 auto;
+  width: 80%;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .main-container {
