@@ -4,11 +4,11 @@
 .header-container,
 .aside-nav ul,
 .main-container, 
-.user-notify {
+.user-info {
   display: flex;
 }
 
-.user-notify {
+.user-info {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
@@ -24,7 +24,7 @@
   @include center;
   width: 80%;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 

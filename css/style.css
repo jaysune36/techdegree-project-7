@@ -382,12 +382,12 @@ ul {
   padding: 0.5em 0;
 }
 
-.user-notify img, .user-notify svg {
+.user-info img, .user-info svg {
   padding: 0 0.5em;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #fff;
   font-weight: 200;
 }
@@ -397,7 +397,7 @@ span {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 200;
   color: #fff;
 }
@@ -421,16 +421,31 @@ img {
   width: 20%;
   border-radius: 50%;
 }
-.header-container img {
-  width: 10%;
+.user-info img {
+  margin-left: 0.5em;
+  max-width: 100px;
 }
 
 svg {
-  width: 10%;
+  margin: 0 auto;
+  width: 20%;
+  display: block;
   fill: #fff;
 }
 .aside-nav svg {
   width: 50%;
+}
+.user-info svg {
+  max-width: 100px;
+  margin-right: 0;
+  padding-right: 1em;
+  border-right: 1px #c2c2c2 solid;
+}
+
+.facebook,
+.insta,
+.twitter {
+  stroke: #AA99D6;
 }
 
 /*=====================================
@@ -439,11 +454,11 @@ svg {
 .header-container,
 .aside-nav ul,
 .main-container,
-.user-notify {
+.user-info {
   display: flex;
 }
 
-.user-notify {
+.user-info {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
@@ -459,7 +474,7 @@ svg {
   margin: 0 auto;
   width: 80%;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .main-container {

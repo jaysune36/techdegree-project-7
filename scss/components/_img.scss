@@ -5,15 +5,30 @@
 img {
   width: 20%;
   border-radius: 50%;
-  .header-container & {
-    width: 10%;
-  }
+  .user-info & {
+      margin-left: .5em;
+      max-width: 100px;
+   }
 }
 
 svg {
-  width: 10%;
+  @include center;
+  width: 20%;
+  display: block;
   fill: $white-color;
   .aside-nav & {
     width: 50%;
-  }
+  } 
+  .user-info & {
+    max-width: 100px;
+      margin-right: 0;
+      padding-right: 1em;
+      border-right: 1px #c2c2c2 solid;
+   }
+}
+
+.facebook,
+.insta,
+.twitter {
+  stroke: $primary-color;
 }
