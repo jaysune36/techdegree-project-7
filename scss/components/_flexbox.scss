@@ -4,7 +4,8 @@
 .header-container,
 .aside-nav ul,
 .main-container, 
-.user-info {
+.user-info,
+.alert {
   display: flex;
 }
 
@@ -26,9 +27,11 @@
   flex-direction: row;
   justify-content: space-between;
 }
-
-
-
 .main-container {
   flex-direction: column;
+}
+.alert {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }

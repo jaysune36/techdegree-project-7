@@ -387,16 +387,16 @@ ul {
 }
 
 h1 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #fff;
   font-weight: 200;
 }
 
-span {
+h1 span {
   font-weight: bold;
 }
 
-h2 {
+.user-info h2 {
   font-size: 0.8rem;
   font-weight: 200;
   color: #fff;
@@ -412,6 +412,24 @@ h2 {
 .aside-container,
 .main-container {
   width: 90%;
+}
+
+.dashboard {
+  text-align: left;
+  font-size: 1rem;
+}
+
+.alert {
+  border: 1px solid #AA99D6;
+  border-radius: 5px;
+  background-color: #AA99D6;
+  color: #fff;
+  margin-top: 0.5em;
+  font-size: 0.6rem;
+  font-weight: 200;
+}
+.alert .close {
+  font-size: 1.5rem;
 }
 
 /*=====================================
@@ -454,7 +472,8 @@ svg {
 .header-container,
 .aside-nav ul,
 .main-container,
-.user-info {
+.user-info,
+.alert {
   display: flex;
 }
 
@@ -479,6 +498,12 @@ svg {
 
 .main-container {
   flex-direction: column;
+}
+
+.alert {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /*=====================================

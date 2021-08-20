@@ -12,14 +12,14 @@
   padding: 0 .5em;
 }
 h1 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: $white-color;
   font-weight: 200;
 }
-span {
+h1 span {
   font-weight: bold;
 }
-h2 {
+.user-info h2 {
   font-size: .8rem;
   font-weight: 200;
   color: $white-color;
@@ -33,4 +33,21 @@ h2 {
 .aside-container,
 .main-container {
   width: 90%;
+}
+
+.dashboard {
+  text-align: left;
+  font-size: 1rem;
+}
+.alert {
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  background-color: $primary-color;
+  color: $white-color;
+  margin-top: .5em;
+  font-size: .6rem;
+  font-weight: 200;
+  & .close {
+    font-size: 1.5rem;
+  }
 }
