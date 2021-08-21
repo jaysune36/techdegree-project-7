@@ -4,6 +4,7 @@
 
 img {
   width: 20%;
+  min-width: 50px;
   border-radius: 50%;
   .user-info & {
       margin-left: .5em;
@@ -20,10 +21,11 @@ svg {
     width: 50%;
   } 
   .user-info & {
+    min-width: 50px;
     max-width: 100px;
-      margin-right: 0;
-      padding-right: 1em;
-      border-right: 1px #c2c2c2 solid;
+    margin-right: 0;
+    padding-right: 1em;
+    border-right: 1px $border-grey solid;
    }
 }
 

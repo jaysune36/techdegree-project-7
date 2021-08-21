@@ -5,7 +5,8 @@
 .aside-nav ul,
 .main-container, 
 .user-info,
-.alert {
+.alert,
+.tab {
   display: flex;
 }
 
@@ -32,6 +33,6 @@
 }
 .alert {
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }

@@ -417,6 +417,14 @@ h1 span {
 .dashboard {
   text-align: left;
   font-size: 1rem;
+  padding: 0 1em;
+}
+
+.tab-space {
+  width: 100%;
+  background-color: #ebebeb;
+  border-left: 1px solid #c2c2c2;
+  border-bottom: 1px solid #c2c2c2;
 }
 
 .alert {
@@ -424,12 +432,16 @@ h1 span {
   border-radius: 5px;
   background-color: #AA99D6;
   color: #fff;
-  margin-top: 0.5em;
+  margin-top: 1.5em;
   font-size: 0.6rem;
   font-weight: 200;
+  padding: 0 1em;
 }
 .alert .close {
   font-size: 1.5rem;
+}
+.alert .close:hover {
+  cursor: pointer;
 }
 
 /*=====================================
@@ -437,6 +449,7 @@ h1 span {
 ======================================*/
 img {
   width: 20%;
+  min-width: 50px;
   border-radius: 50%;
 }
 .user-info img {
@@ -454,6 +467,7 @@ svg {
   width: 50%;
 }
 .user-info svg {
+  min-width: 50px;
   max-width: 100px;
   margin-right: 0;
   padding-right: 1em;
@@ -473,7 +487,8 @@ svg {
 .aside-nav ul,
 .main-container,
 .user-info,
-.alert {
+.alert,
+.tab {
   display: flex;
 }
 
@@ -502,7 +517,7 @@ svg {
 
 .alert {
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 

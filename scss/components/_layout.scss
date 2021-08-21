@@ -38,16 +38,27 @@ h1 span {
 .dashboard {
   text-align: left;
   font-size: 1rem;
+  padding: 0 1em;
+}
+.tab-space {
+  width: 100%;
+  background-color: $background-light-grey;
+  border-left: 1px solid $border-grey;
+  border-bottom: 1px solid $border-grey;
 }
 .alert {
   border: 1px solid $primary-color;
   border-radius: 5px;
   background-color: $primary-color;
   color: $white-color;
-  margin-top: .5em;
+  margin-top: 1.5em;
   font-size: .6rem;
   font-weight: 200;
+  padding: 0 1em;
   & .close {
     font-size: 1.5rem;
+  }
+  & .close:hover {
+    cursor: pointer;
   }
 }
