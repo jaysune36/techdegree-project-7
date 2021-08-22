@@ -6,7 +6,8 @@
 .main-container, 
 .user-info,
 .alert,
-.tab {
+.tab,
+.line-chart ul{
   display: flex;
 }
 
@@ -31,7 +32,8 @@
 .main-container {
   flex-direction: column;
 }
-.alert {
+.alert,
+.line-chart ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

@@ -444,6 +444,37 @@ h1 span {
   cursor: pointer;
 }
 
+.traffic {
+  margin-top: 1em;
+}
+
+.traffic,
+.daily-traffic,
+.mobile-users {
+  border-bottom: 1px solid #c2c2c2;
+  padding-bottom: 1em;
+}
+
+.traffic h2,
+.daily-traffic h2,
+.mobile-users h2 {
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.line-chart ul {
+  padding-inline-start: 0;
+  width: 90%;
+  font-size: 0.8rem;
+}
+
+.line-chart,
+.bar-chart,
+.pie-chart {
+  margin: 0 auto;
+  width: 100%;
+}
+
 /*=====================================
         IMG COMPONENT
 ======================================*/
@@ -488,7 +519,8 @@ svg {
 .main-container,
 .user-info,
 .alert,
-.tab {
+.tab,
+.line-chart ul {
   display: flex;
 }
 
@@ -515,7 +547,8 @@ svg {
   flex-direction: column;
 }
 
-.alert {
+.alert,
+.line-chart ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

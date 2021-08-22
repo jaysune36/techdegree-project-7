@@ -62,3 +62,31 @@ h1 span {
     cursor: pointer;
   }
 }
+.traffic {
+  margin-top: 1em;
+}
+.traffic,
+.daily-traffic,
+.mobile-users {
+  border-bottom: 1px solid $border-grey;
+  padding-bottom: 1em;
+}
+.traffic h2,
+.daily-traffic h2,
+.mobile-users h2 {
+    text-align: left;
+    font-size: .9rem;
+}
+
+.line-chart ul {
+  padding-inline-start: 0;
+  width: 90%;
+  font-size: .8rem;
+}
+
+.line-chart,
+.bar-chart,
+.pie-chart {
+  @include center;
+  width: 100%;
+}
