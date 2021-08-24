@@ -14,13 +14,14 @@ img {
 
 svg {
   @include center;
-  width: 20%;
+  width: 100%;
   display: block;
   fill: $white-color;
   .aside-nav & {
     width: 50%;
   } 
   .user-info & {
+    width: 20%;
     min-width: 50px;
     max-width: 100px;
     margin-right: 0;
@@ -33,4 +34,30 @@ svg {
 .insta,
 .twitter {
   stroke: $primary-color;
+}
+
+.insta {
+  stroke-width: .1;
+}
+
+.facebook-contain,
+.insta-contain,
+.twitter-contain {
+  border: 1px solid $border-grey;
+  background-color: $background-light-grey;
+  border-radius: 10px;
+  & h3,
+  & h3,
+  & h3 {
+    color: $primary-color;
+  }
+}
+
+.facebook-icon-background,
+.insta-icon-background,
+.twitter-icon-background {
+  padding: 1em;
+  width: 20%;
+  border-radius: 50%;
+  background-color: $primary-color;
 }

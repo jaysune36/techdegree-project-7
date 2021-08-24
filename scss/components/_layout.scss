@@ -73,7 +73,8 @@ h1 span {
 }
 .traffic h2,
 .daily-traffic h2,
-.mobile-users h2 {
+.mobile-users h2,
+.social h2 {
     text-align: left;
     font-size: .9rem;
 }
@@ -90,3 +91,5 @@ h1 span {
   @include center;
   width: 100%;
 }
+
+

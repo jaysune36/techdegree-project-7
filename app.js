@@ -12,10 +12,10 @@ let hourTrafData = [700, 1390, 1000, 2000, 1500, 1800, 1300, 1950, 2250, 1500, 2
 let DailyTrafData = [];
 let WeeklyTrafData = [];
 let MontlyTrafData = [];
-let hourTrafLabel  = ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'];
-let DailyTrafLabel  = [];
-let WeeklyTrafLabel  = [];
-let MontlyTrafLabel  = [];
+let hourTrafLabel = ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'];
+let DailyTrafLabel = [];
+let WeeklyTrafLabel = [];
+let MontlyTrafLabel = [];
 
 function alertMessage() {
   alertDiv.innerHTML = `<h2><span class='bold'>Alert</span>: You have unread messages</h2><span class='close'>&times;</span>`;
@@ -26,15 +26,15 @@ window.onload = alertMessage();
 const lineChart = new Chart(ctxLine, {
   type: 'line',
   data: {
-     labels: hourTrafLabel,
-     datasets: [{
-         data: hourTrafData,
-         backgroundColor: "rgba(217,209,234, 0.4)",
-         borderColor: "#AA99D6",
-         borderWidth: 1,
-         fill: true,
-         lineTension: 0.4
-         }]
+    labels: hourTrafLabel,
+    datasets: [{
+      data: hourTrafData,
+      backgroundColor: "rgba(217,209,234, 0.8)",
+      borderColor: "#AA99D6",
+      borderWidth: 1,
+      fill: true,
+      lineTension: 0.4
+    }]
   },
   options: {
     plugins: {
@@ -42,25 +42,25 @@ const lineChart = new Chart(ctxLine, {
         display: false
       }
     }
- }
+  }
 })
 
 const barChart = new Chart(ctxBar, {
   type: 'bar',
   data: {
-     labels: dailyTrafficLabel,
-     datasets: [{
-         label: 'Popular JavaScript Frameworks',
-         data: dailyTrafficData,
-         backgroundColor: [
-          "#AA99D6",
-          "#AA99D6",
-          "#AA99D6",
-          "#AA99D6",
-          "#AA99D6"
-         ],
-            borderWidth: 1
-         }]
+    labels: dailyTrafficLabel,
+    datasets: [{
+      label: 'Popular JavaScript Frameworks',
+      data: dailyTrafficData,
+      backgroundColor: [
+        "#AA99D6",
+        "#AA99D6",
+        "#AA99D6",
+        "#AA99D6",
+        "#AA99D6"
+      ],
+      borderWidth: 1
+    }]
   },
   options: {
     plugins: {
@@ -68,32 +68,35 @@ const barChart = new Chart(ctxBar, {
         display: false
       }
     }
- }
+  }
 })
 
 const pieChart = new Chart(ctxPie, {
   type: 'doughnut',
   data: {
-     labels: mobileUserLabel,
-     datasets: [{
-         data: mobileUserData,
-         backgroundColor: [
-          "#AA99D6",
-          "#00D096",
-          "#00C2B4"
-          ],
+    labels: mobileUserLabel,
+    datasets: [{
+      data: mobileUserData,
+      backgroundColor: [
+        "#AA99D6",
+        "#00D096",
+        "#00C2B4"
+      ],
 
-         borderColor: [
-          "#AA99D6",
-          "#00D096",
-          "#00C2B4"
-        ],
-            borderWidth: 1
-         }]
+      borderColor: [
+        "#AA99D6",
+        "#00D096",
+        "#00C2B4"
+      ],
+      borderWidth: 1
+    }]
   },
   options: {
+    aspectRatio: 1.5,
     layout: {
-      
+      padding: {
+        left: 40
+      }
     },
     plugins: {
       legend: {
@@ -106,12 +109,12 @@ const pieChart = new Chart(ctxPie, {
         }
       }
     }
- }
+  }
 })
 
-alertDiv.addEventListener('click', (e)=> {
-  if(e.target.tagName === 'SPAN') {
-    if(e.target.className === 'close') {
+alertDiv.addEventListener('click', (e) => {
+  if (e.target.tagName === 'SPAN') {
+    if (e.target.className === 'close') {
       let h2 = e.target.parentNode;
       let alert = h2.parentNode;
       alert.removeChild(h2);

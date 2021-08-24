@@ -457,7 +457,8 @@ h1 span {
 
 .traffic h2,
 .daily-traffic h2,
-.mobile-users h2 {
+.mobile-users h2,
+.social h2 {
   text-align: left;
   font-size: 0.9rem;
 }
@@ -490,7 +491,7 @@ img {
 
 svg {
   margin: 0 auto;
-  width: 20%;
+  width: 100%;
   display: block;
   fill: #fff;
 }
@@ -498,6 +499,7 @@ svg {
   width: 50%;
 }
 .user-info svg {
+  width: 20%;
   min-width: 50px;
   max-width: 100px;
   margin-right: 0;
@@ -509,6 +511,36 @@ svg {
 .insta,
 .twitter {
   stroke: #AA99D6;
+}
+
+.insta {
+  stroke-width: 0.1;
+}
+
+.facebook-contain,
+.insta-contain,
+.twitter-contain {
+  border: 1px solid #c2c2c2;
+  background-color: #ebebeb;
+  border-radius: 10px;
+}
+.facebook-contain h3, .facebook-contain h3, .facebook-contain h3,
+.insta-contain h3,
+.insta-contain h3,
+.insta-contain h3,
+.twitter-contain h3,
+.twitter-contain h3,
+.twitter-contain h3 {
+  color: #AA99D6;
+}
+
+.facebook-icon-background,
+.insta-icon-background,
+.twitter-icon-background {
+  padding: 1em;
+  width: 20%;
+  border-radius: 50%;
+  background-color: #AA99D6;
 }
 
 /*=====================================
