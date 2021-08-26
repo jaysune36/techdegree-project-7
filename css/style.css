@@ -361,7 +361,7 @@ template {
 
 body {
   text-align: center;
-  font-family: "Raleway", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 ul {
@@ -398,7 +398,7 @@ h1 span {
 
 .user-info h2 {
   font-size: 0.8rem;
-  font-weight: 200;
+  font-weight: 300;
   color: #fff;
 }
 
@@ -432,8 +432,10 @@ h1 span {
   background-color: #AA99D6;
   color: #fff;
   font-size: 0.6rem;
-  font-weight: 200;
   padding: 0 1em;
+}
+.alert h2 {
+  font-weight: 300;
 }
 .alert .close {
   font-size: 1.5rem;
@@ -516,24 +518,28 @@ h1 span {
 .twitter-contain p {
   margin: 0;
   font-size: 2em;
-  font-weight: 200;
 }
 
-.members {
+.members,
+.recent-mem {
   padding-inline-start: 0;
   font-size: 0.75em;
 }
-.members .email {
+.members .email,
+.recent-mem .email {
   color: #AA99D6;
 }
-.members p {
+.members p,
+.recent-mem p {
   margin: 0;
 }
-.members li {
+.members li,
+.recent-mem li {
   border-bottom: 1px solid #c2c2c2;
   padding: 1.5em 0 1.5em 0;
 }
-.members li:last-child {
+.members li:last-child,
+.recent-mem li:last-child {
   border: none;
   padding-bottom: 0;
 }

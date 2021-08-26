@@ -18,7 +18,7 @@ let WeeklyTrafLabel = [];
 let MontlyTrafLabel = [];
 
 function alertMessage() {
-  alertDiv.innerHTML = `<h2><span class='bold'>Alert</span>: You have unread messages</h2><span class='close'>&times;</span>`;
+  alertDiv.innerHTML = `<h2><b>Alert</b>: You have unread messages</h2><span class='close'>&times;</span>`;
 }
 
 window.onload = alertMessage();

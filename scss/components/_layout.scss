@@ -21,7 +21,7 @@ h1 span {
 }
 .user-info h2 {
   font-size: .8rem;
-  font-weight: 200;
+  font-weight: 300;
   color: $white-color;
 }
 .aside {
@@ -51,8 +51,10 @@ h1 span {
   background-color: $primary-color;
   color: $white-color;
   font-size: .6rem;
-  font-weight: 200;
   padding: 0 1em;
+  & h2 {
+    font-weight: 300;
+  }
   & .close {
     font-size: 1.5rem;
   }
@@ -121,11 +123,11 @@ h1 span {
   & p {
     margin: 0;
     font-size: 2em;
-    font-weight: 200;
   }
 }
 
-.members {
+.members,
+.recent-mem {
   padding-inline-start: 0;
   font-size: .75em;
   & .email {
