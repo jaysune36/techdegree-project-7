@@ -453,7 +453,9 @@ h1 span {
 .mobile-users,
 .social,
 .new-members,
-.recent-activity {
+.recent-activity,
+.message-user,
+.settings {
   border-bottom: 1px solid #c2c2c2;
   padding-bottom: 1em;
 }
@@ -463,7 +465,9 @@ h1 span {
 .mobile-users h2,
 .social h2,
 .new-members h2,
-.recent-activity h2 {
+.recent-activity h2,
+.message-user h2,
+.settings h2 {
   text-align: left;
   font-size: 0.9rem;
   margin-left: 5%;
@@ -651,7 +655,9 @@ svg {
 .pie-chart,
 .social-contain,
 .new-mem-contain,
-.recent-act-contain {
+.recent-act-contain,
+.message-user-contain,
+.settings-contain {
   margin: 0 auto;
   width: 90%;
 }

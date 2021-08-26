@@ -15,7 +15,9 @@
 .pie-chart,
 .social-contain,
 .new-mem-contain,
-.recent-act-contain{
+.recent-act-contain,
+.message-user-contain,
+.settings-contain{
   @include center;
   width: 90%;
 }

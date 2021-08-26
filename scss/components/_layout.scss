@@ -70,7 +70,9 @@ h1 span {
 .mobile-users,
 .social,
 .new-members,
-.recent-activity {
+.recent-activity,
+.message-user,
+.settings {
   border-bottom: 1px solid $border-grey;
   padding-bottom: 1em;
 }
@@ -79,7 +81,9 @@ h1 span {
 .mobile-users h2,
 .social h2,
 .new-members h2,
-.recent-activity h2 {
+.recent-activity h2,
+.message-user h2,
+.settings h2 {
     text-align: left;
     font-size: .9rem;
     margin-left: 5%;
