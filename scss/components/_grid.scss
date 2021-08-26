@@ -2,9 +2,20 @@
         GRID COMPONENT
 ======================================*/
 
+// .header-container,
+// .aside-container,
+// .main-container {
+// }
+
 .header-container,
 .aside-container,
-.main-container {
+.alert,
+.line-chart,
+.bar-chart,
+.pie-chart,
+.social-contain,
+.new-mem-contain,
+.recent-act-contain{
   @include center;
   width: 90%;
 }

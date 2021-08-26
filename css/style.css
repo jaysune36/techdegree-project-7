@@ -409,11 +409,6 @@ h1 span {
   padding: 0.5em 0;
 }
 
-.aside-container,
-.main-container {
-  width: 90%;
-}
-
 .dashboard {
   text-align: left;
   font-size: 1rem;
@@ -427,12 +422,15 @@ h1 span {
   border-bottom: 1px solid #c2c2c2;
 }
 
+.tab {
+  margin-bottom: 1.5em;
+}
+
 .alert {
   border: 1px solid #AA99D6;
   border-radius: 5px;
   background-color: #AA99D6;
   color: #fff;
-  margin-top: 1.5em;
   font-size: 0.6rem;
   font-weight: 200;
   padding: 0 1em;
@@ -445,12 +443,15 @@ h1 span {
 }
 
 .traffic {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
-.traffic,
+.traffic-chart,
 .daily-traffic,
-.mobile-users {
+.mobile-users,
+.social,
+.new-members,
+.recent-activity {
   border-bottom: 1px solid #c2c2c2;
   padding-bottom: 1em;
 }
@@ -458,14 +459,18 @@ h1 span {
 .traffic h2,
 .daily-traffic h2,
 .mobile-users h2,
-.social h2 {
+.social h2,
+.new-members h2,
+.recent-activity h2 {
   text-align: left;
   font-size: 0.9rem;
+  margin-left: 5%;
 }
 
-.line-chart ul {
+.traffic-chart ul {
   padding-inline-start: 0;
-  width: 90%;
+  margin-left: 10%;
+  width: 70%;
   font-size: 0.8rem;
 }
 
@@ -474,6 +479,11 @@ h1 span {
 .pie-chart {
   margin: 0 auto;
   width: 100%;
+}
+
+.line-chart,
+.bar-chart {
+  padding-top: 1.5rem;
 }
 
 .facebook-contain,
@@ -507,6 +517,25 @@ h1 span {
   margin: 0;
   font-size: 2em;
   font-weight: 200;
+}
+
+.members {
+  padding-inline-start: 0;
+  font-size: 0.75em;
+}
+.members .email {
+  color: #AA99D6;
+}
+.members p {
+  margin: 0;
+}
+.members li {
+  border-bottom: 1px solid #c2c2c2;
+  padding: 1.5em 0 1.5em 0;
+}
+.members li:last-child {
+  border: none;
+  padding-bottom: 0;
 }
 
 /*=====================================
@@ -571,7 +600,7 @@ svg {
 .user-info,
 .alert,
 .tab,
-.line-chart ul {
+.traffic-chart ul {
   display: flex;
 }
 
@@ -599,7 +628,7 @@ svg {
 }
 
 .alert,
-.line-chart ul {
+.traffic-chart ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -610,7 +639,13 @@ svg {
 ======================================*/
 .header-container,
 .aside-container,
-.main-container {
+.alert,
+.line-chart,
+.bar-chart,
+.pie-chart,
+.social-contain,
+.new-mem-contain,
+.recent-act-contain {
   margin: 0 auto;
   width: 90%;
 }

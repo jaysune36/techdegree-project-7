@@ -7,7 +7,7 @@
 .user-info,
 .alert,
 .tab,
-.line-chart ul{
+.traffic-chart ul{
   display: flex;
 }
 
@@ -33,7 +33,7 @@
   flex-direction: column;
 }
 .alert,
-.line-chart ul {
+.traffic-chart ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
