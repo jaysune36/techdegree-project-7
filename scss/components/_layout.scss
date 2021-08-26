@@ -93,3 +93,27 @@ h1 span {
 }
 
 
+.facebook-contain,
+.insta-contain,
+.twitter-contain {
+  text-align: left;
+  border: 1px solid $border-grey;
+  background-color: $background-light-grey;
+  border-radius: 10px;
+  margin-bottom: .5rem;
+  padding: 1rem;
+  & h3,
+  & h3,
+  & h3 {
+    color: $primary-color;
+    font-size: 1rem;
+    margin: 0;
+  }
+  & p,
+  & p,
+  & p {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 200;
+  }
+}

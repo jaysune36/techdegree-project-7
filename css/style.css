@@ -476,6 +476,39 @@ h1 span {
   width: 100%;
 }
 
+.facebook-contain,
+.insta-contain,
+.twitter-contain {
+  text-align: left;
+  border: 1px solid #c2c2c2;
+  background-color: #ebebeb;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+.facebook-contain h3, .facebook-contain h3, .facebook-contain h3,
+.insta-contain h3,
+.insta-contain h3,
+.insta-contain h3,
+.twitter-contain h3,
+.twitter-contain h3,
+.twitter-contain h3 {
+  color: #AA99D6;
+  font-size: 1rem;
+  margin: 0;
+}
+.facebook-contain p, .facebook-contain p, .facebook-contain p,
+.insta-contain p,
+.insta-contain p,
+.insta-contain p,
+.twitter-contain p,
+.twitter-contain p,
+.twitter-contain p {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 200;
+}
+
 /*=====================================
         IMG COMPONENT
 ======================================*/
@@ -517,30 +550,16 @@ svg {
   stroke-width: 0.1;
 }
 
-.facebook-contain,
-.insta-contain,
-.twitter-contain {
-  border: 1px solid #c2c2c2;
-  background-color: #ebebeb;
-  border-radius: 10px;
-}
-.facebook-contain h3, .facebook-contain h3, .facebook-contain h3,
-.insta-contain h3,
-.insta-contain h3,
-.insta-contain h3,
-.twitter-contain h3,
-.twitter-contain h3,
-.twitter-contain h3 {
-  color: #AA99D6;
-}
-
 .facebook-icon-background,
 .insta-icon-background,
 .twitter-icon-background {
-  padding: 1em;
+  padding: 0.75em;
   width: 20%;
+  max-width: 60px;
   border-radius: 50%;
   background-color: #AA99D6;
+  float: left;
+  margin-right: 1rem;
 }
 
 /*=====================================
