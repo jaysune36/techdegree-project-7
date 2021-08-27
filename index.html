@@ -229,6 +229,45 @@
         <section class='settings'>
           <h2>SETTINGS</h2>
           <div class='settings-contain'>
+            <form action='POST'>
+              <label class="switch-light switch-ios" onclick="">
+                <input type="checkbox">
+              
+                <strong>
+                  Send Email Notifications
+                </strong>
+              
+                <span>
+                  <span>OFF</span>
+                  <span>ON</span>
+                  <a></a>
+                </span>
+              </label>
+              <label class="switch-light switch-ios" onclick="">
+                <input type="checkbox">
+              
+                <strong>
+                  Set Profile to Public
+                </strong>
+              
+                <span>
+                  <span>OFF</span>
+                  <span>ON</span>
+                  <a></a>
+                </span>
+              </label>
+              <select name="timezone" id="timezone" required>
+                <option value="" disabled selected hidden>Select a Timezone</option>
+                <option value="eastern">Eastern Standard Time</option>
+                <option value="pacific">Pacific Standard Time</option>
+                <option value="central">Central Standard Time</option>
+                <option value="mountain">Mountain Standard Time</option>
+              </select>
+              <div class="settings-button" >
+                <button class="button-primary" id="save">SAVE</button>
+                <button class="button-disabled" id="cancel">CANCEL</button>
+                </div>
+            </form>
           </div>
         </section>
         <!-- /MAIN CONTAINER -->

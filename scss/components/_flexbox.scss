@@ -8,7 +8,8 @@
 .alert,
 .tab,
 .traffic-chart ul,
-.message-user-contain{
+.message-user-contain,
+.settings-button{
   display: flex;
 }
 
@@ -41,4 +42,8 @@
 }
 .message-user-contain {
   flex-direction: column;
+}
+.settings-button {
+  flex-direction: row;
+  justify-content: space-between;
 }
