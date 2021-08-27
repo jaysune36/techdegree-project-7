@@ -7,7 +7,8 @@
 .user-info,
 .alert,
 .tab,
-.traffic-chart ul{
+.traffic-chart ul,
+.message-user-contain{
   display: flex;
 }
 
@@ -37,4 +38,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.message-user-contain {
+  flex-direction: column;
 }

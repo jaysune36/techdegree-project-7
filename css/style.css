@@ -413,6 +413,7 @@ h1 span {
   text-align: left;
   font-size: 1rem;
   padding: 0 1em;
+  margin-left: 0;
 }
 
 .tab-space {
@@ -460,14 +461,7 @@ h1 span {
   padding-bottom: 1em;
 }
 
-.traffic h2,
-.daily-traffic h2,
-.mobile-users h2,
-.social h2,
-.new-members h2,
-.recent-activity h2,
-.message-user h2,
-.settings h2 {
+h2 {
   text-align: left;
   font-size: 0.9rem;
   margin-left: 5%;
@@ -548,6 +542,32 @@ h1 span {
   padding-bottom: 0;
 }
 
+.message-user-contain input {
+  padding: 1em;
+}
+.message-user-contain textarea {
+  height: 150px;
+  max-width: 100%;
+  padding: 0.5em;
+}
+.message-user-contain input, .message-user-contain textarea {
+  font-size: 0.9rem;
+  background-color: #ebebeb;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  border: 1px solid #c2c2c2;
+}
+.message-user-contain input::placeholder, .message-user-contain textarea::placeholder {
+  color: #c2c2c2;
+}
+.message-user-contain button {
+  border: 1px solid #c2c2c2;
+  border-radius: 5px;
+  background-color: #AA99D6;
+  color: #fff;
+  padding: 1em 0;
+}
+
 /*=====================================
         IMG COMPONENT
 ======================================*/
@@ -610,7 +630,8 @@ svg {
 .user-info,
 .alert,
 .tab,
-.traffic-chart ul {
+.traffic-chart ul,
+.message-user-contain {
   display: flex;
 }
 
@@ -642,6 +663,10 @@ svg {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.message-user-contain {
+  flex-direction: column;
 }
 
 /*=====================================

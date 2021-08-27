@@ -35,6 +35,7 @@ h1 span {
   text-align: left;
   font-size: 1rem;
   padding: 0 1em;
+  margin-left: 0;
 }
 .tab-space {
   width: 100%;
@@ -76,14 +77,8 @@ h1 span {
   border-bottom: 1px solid $border-grey;
   padding-bottom: 1em;
 }
-.traffic h2,
-.daily-traffic h2,
-.mobile-users h2,
-.social h2,
-.new-members h2,
-.recent-activity h2,
-.message-user h2,
-.settings h2 {
+
+h2 {
     text-align: left;
     font-size: .9rem;
     margin-left: 5%;
@@ -147,6 +142,34 @@ h1 span {
   & li:last-child {
     border: none;
     padding-bottom: 0;
+  }
+}
+
+.message-user-contain {
+  & input {
+    padding: 1em;
+  }
+  & textarea {
+    height: 150px;
+    max-width: 100%;
+    padding: .5em;
+  }
+  & input, & textarea {
+    font-size: .9rem;
+    background-color: $background-light-grey;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: 1px solid $border-grey;
+  }
+  & input::placeholder, & textarea::placeholder {
+    color: $border-grey;
+  }
+  & button {
+    border: 1px solid $border-grey;
+    border-radius: 5px;
+    background-color: $primary-color;
+    color: $white-color;
+    padding: 1em 0;
   }
 }
 
