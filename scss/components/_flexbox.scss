@@ -3,13 +3,13 @@
 ======================================*/
 .header-container,
 .aside-nav ul,
-.main-container, 
 .user-info,
 .alert,
 .tab,
 .traffic-chart ul,
 .message-user-contain,
-.settings-button{
+.settings-button,
+.bell-icon{
   display: flex;
 }
 
@@ -31,8 +31,11 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.main-container {
-  flex-direction: column;
+.bell-icon {
+  flex-direction: column-reverse;
+  & .notification {
+    align-self: flex-end;
+  }
 }
 .alert,
 .traffic-chart ul {

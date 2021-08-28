@@ -117,7 +117,9 @@ alertDiv.addEventListener('click', (e) => {
     if (e.target.className === 'close') {
       let h2 = e.target.parentNode;
       let alert = h2.parentNode;
+      const notification = document.querySelector('.notification')
       alert.removeChild(h2);
+      notification.style.display = 'none'
     }
   }
 })

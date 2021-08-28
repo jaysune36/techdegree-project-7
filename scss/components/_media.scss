@@ -1,0 +1,55 @@
+/*=====================================
+        MEDIA QUERIES
+======================================*/
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas: 
+      'header header'
+      'aside main';
+  }
+  .header {
+    grid-area: header;
+  }
+  .aside {
+    grid-area: aside;
+  }
+  main {
+    grid-area: main;
+  }
+  .main-container {
+    display: grid;
+    grid-template-columns: 50%;
+  }
+  .traffic {
+    display: grid;
+    grid-template-columns: 50%;
+  }
+  .alert, 
+  .traffic, 
+  .social,
+  .traffic-chart {
+    grid-column: 1 / span 2;
+  }
+  .daily-traffic,
+  .new-members,
+  .message-user{
+    grid-column: 1 / span 1;
+  }
+  .mobile-user,
+  .recent-activiy,
+  .settings{
+    grid-column: 2 / span 2;
+  }
+  .header-container {
+    width: 95%;
+  }
+  .aside-nav ul {
+    flex-direction: column;
+    margin-top: .5em;
+    & li {
+      margin-bottom: 1em;
+    }
+  }
+}

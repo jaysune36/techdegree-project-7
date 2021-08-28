@@ -1087,6 +1087,7 @@ h1 span {
   font-size: 0.8rem;
   font-weight: 300;
   color: #fff;
+  margin-left: 0;
 }
 
 .aside {
@@ -1094,6 +1095,14 @@ h1 span {
 }
 .aside-nav ul {
   padding: 0.5em 0;
+}
+
+.notification {
+  background-color: #51F200;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  margin-right: 1em;
 }
 
 .dashboard {
@@ -1111,7 +1120,7 @@ h1 span {
 }
 
 .tab {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 .alert {
@@ -1124,6 +1133,7 @@ h1 span {
 }
 .alert h2 {
   font-weight: 300;
+  margin-left: 0;
 }
 .alert .close {
   font-size: 1.5rem;
@@ -1202,6 +1212,7 @@ h2 {
 .twitter-contain p {
   margin: 0;
   font-size: 2em;
+  color: #9f9f9f;
 }
 
 .members,
@@ -1276,6 +1287,9 @@ h2 {
   box-shadow: inset 0 0 0 30px #AA99D6;
 }
 .switch-ios.switch-light input:checked ~ span a {
+  top: 0.11em;
+  width: 1.5em;
+  height: 1.5em;
   border-color: #AA99D6;
   border: 2px solid #c2c2c2;
 }
@@ -1368,13 +1382,13 @@ svg {
 ======================================*/
 .header-container,
 .aside-nav ul,
-.main-container,
 .user-info,
 .alert,
 .tab,
 .traffic-chart ul,
 .message-user-contain,
-.settings-button {
+.settings-button,
+.bell-icon {
   display: flex;
 }
 
@@ -1397,8 +1411,11 @@ svg {
   justify-content: space-between;
 }
 
-.main-container {
-  flex-direction: column;
+.bell-icon {
+  flex-direction: column-reverse;
+}
+.bell-icon .notification {
+  align-self: flex-end;
 }
 
 .alert,
@@ -1433,6 +1450,75 @@ svg {
 .settings-contain {
   margin: 0 auto;
   width: 90%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: auto;
+}
+
+/*=====================================
+        MEDIA QUERIES
+======================================*/
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas: "header header" "aside main";
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .aside {
+    grid-area: aside;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  .main-container {
+    display: grid;
+    grid-template-columns: 50%;
+  }
+
+  .traffic {
+    display: grid;
+    grid-template-columns: 50%;
+  }
+
+  .alert,
+.traffic,
+.social,
+.traffic-chart {
+    grid-column: 1/span 2;
+  }
+
+  .daily-traffic,
+.new-members,
+.message-user {
+    grid-column: 1/span 1;
+  }
+
+  .mobile-user,
+.recent-activiy,
+.settings {
+    grid-column: 2/span 2;
+  }
+
+  .header-container {
+    width: 95%;
+  }
+
+  .aside-nav ul {
+    flex-direction: column;
+    margin-top: 0.5em;
+  }
+  .aside-nav ul li {
+    margin-bottom: 1em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

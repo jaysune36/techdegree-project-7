@@ -2,11 +2,6 @@
         GRID COMPONENT
 ======================================*/
 
-// .header-container,
-// .aside-container,
-// .main-container {
-// }
-
 .header-container,
 .aside-container,
 .alert,
@@ -22,3 +17,8 @@
   width: 90%;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: auto;
+}
