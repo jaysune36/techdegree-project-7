@@ -8,7 +8,8 @@ let dailyTrafficData = [60, 105, 165, 125, 225, 200, 100]
 let dailyTrafficLabel = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 let mobileUserData = [70, 15, 15];
 let mobileUserLabel = ['Desktop', 'Tablet', 'Phones']
-let hourTrafData = [700, 1390, 1000, 2000, 1500, 1800, 1300, 1950, 2250, 1500, 2500];
+let hourTrafData = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
+  2500];
 let DailyTrafData = [];
 let WeeklyTrafData = [];
 let MontlyTrafData = [];
@@ -37,6 +38,12 @@ const lineChart = new Chart(ctxLine, {
     }]
   },
   options: {
+    aspectRatio: 2.5,
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    },
     plugins: {
       legend: {
         display: false

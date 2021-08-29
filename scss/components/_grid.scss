@@ -5,9 +5,6 @@
 .header-container,
 .aside-container,
 .alert,
-.line-chart,
-.bar-chart,
-.pie-chart,
 .social-contain,
 .new-mem-contain,
 .recent-act-contain,
@@ -15,6 +12,13 @@
 .settings-contain{
   @include center;
   width: 90%;
+}
+
+.line-chart,
+.bar-chart,
+.pie-chart {
+  @include center;
+  width: 95vw;
 }
 
 .grid-container {

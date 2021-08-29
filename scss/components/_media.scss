@@ -22,28 +22,29 @@
     display: grid;
     grid-template-columns: 50%;
   }
-  .traffic {
-    display: grid;
-    grid-template-columns: 50%;
-  }
-  .alert, 
-  .traffic, 
+  .alert,
+  .traffic-chart,
   .social,
-  .traffic-chart {
+  .new-members,
+  .recent-activity,
+  .message-user,
+  .settings {
     grid-column: 1 / span 2;
   }
-  .daily-traffic,
-  .new-members,
-  .message-user{
-    grid-column: 1 / span 1;
+  .daily-chart,
+  .mobile-users {
+    grid-column: 2 / span 1;
   }
-  .mobile-user,
-  .recent-activiy,
-  .settings{
-    grid-column: 2 / span 2;
-  }
-  .header-container {
+  .header-container,
+  .social-contain {
     width: 95%;
+  }
+  .bar-chart,
+  .pie-chart {
+    width: 45vw;
+  }
+  .line-chart {
+    width: 90vw;
   }
   .aside-nav ul {
     flex-direction: column;
@@ -51,5 +52,39 @@
     & li {
       margin-bottom: 1em;
     }
+  }
+  .mobile-users {
+    border-left: 1px solid $border-grey;
+  }
+  .social-contain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .facebook-contain,
+  .insta-contain,
+  .twitter-contain {
+    flex-grow: 1;
+  }
+  .facebook-contain,
+  .insta-contain {
+    margin-right: 1em;
+  }
+  .settings label {
+    width: 30vw;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .daily-chart, 
+  .new-members,
+  .message-user {
+    grid-column: 2 / span 1;
+  }
+  .mobile-users,
+  .recent-activity,
+  .settings {
+    grid-column: 2 / span 1;
   }
 }
