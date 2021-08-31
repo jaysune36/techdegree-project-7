@@ -79,9 +79,10 @@
     </div>
     <!-- MAIN CONTINAER -->
     <div class="main-container">
-      <div class='alert'></div>
+      <div class='alert col-1'></div>
       <!-- Traffic class -->
       <section class="traffic-chart">
+        <div class='traffic-nav'>
         <h2>TRAFFIC</h2>
         <ul>
           <li>Hourly</li>
@@ -89,19 +90,20 @@
           <li>Weekly</li>
           <li>Monthly</li>
         </ul>
-        <div class='line-chart'>
+        </div>
+        <div class='line-chart col-1'>
           <canvas id='lineChart'></canvas>
         </div>
       </section>
       <section class="daily-traffic">
         <h2>DAILY TRAFFIC</h2>
-        <div class="bar-chart">
+        <div class="bar-chart col-1">
           <canvas id='barChart'></canvas>
         </div>
       </section>
       <section class="mobile-users">
         <h2>MOBILE USERS</h2>
-        <div class="pie-chart">
+        <div class="pie-chart col-2">
           <canvas id='pieChart'></canvas>
         </div>
         <!-- /Traffic class -->
@@ -109,7 +111,7 @@
       <!-- Social Stats -->
       <section class='social'>
         <h2>SOCIAL STATS</h2>
-        <div class='social-contain'>
+        <div class='social-contain col-1'>
           <div class='facebook-contain'>
             <!-- Facebook SVG -->
             <div class='facebook-icon-background'>
@@ -158,30 +160,38 @@
       <!-- NEW MEMBERS -->
       <section class="new-members">
         <h2>NEW MEMEBERS</h2>
-        <div class='new-mem-contain'>
+        <div class='new-mem-contain col-1'>
           <ul class='members'>
             <li>
-              <img src="web_app_dashboard_v3.2/images/member-1.jpg" alt="Memebr 1" />
-              <p>Victoria Chambers</p>
-              <p class='email'>victoria.chambers80@example.com</p>
+              <img src="web_app_dashboard_v3.2/images/member-1.jpg" alt="Memeber 1" />
+              <div class='member-text'>
+                <p>Victoria Chambers</p>
+                <a href='#'>victoria.chambers80@example.com</a>
+              </div>
               <p>10/15/20</p>
             </li>
             <li>
-              <img src="web_app_dashboard_v3.2/images/member-2.jpg" alt="Memebr 2" />
-              <p>Dale Byrd</p>
-              <p class='email'>dale.byrd52@example.com</p>
+              <img src="web_app_dashboard_v3.2/images/member-2.jpg" alt="Memeber 2" />
+              <div class='member-text'>
+                <p>Dale Byrd</p>
+                <a href='#'>dale.byrd52@example.com</a>
+              </div>
               <p>10/15/20</p>
             </li>
             <li>
-              <img src="web_app_dashboard_v3.2/images/member-3.jpg" alt="Memebr 3" />
-              <p>Dawn Wood</p>
-              <p class='email'>dawn.wood16@example.com</p>
+              <img src="web_app_dashboard_v3.2/images/member-3.jpg" alt="Memeber 3" />
+              <div class='member-text'>
+                <p>Dawn Wood</p>
+                <a href='#'>dawn.wood16@example.com</a>
+              </div>
               <p>10/15/20</p>
             </li>
             <li>
-              <img src="web_app_dashboard_v3.2/images/member-4.jpg" alt="Memebr 4" />
-              <p>Dan Oliver</p>
-              <p class='email'>dan.oliver82@example.com</p>
+              <img src="web_app_dashboard_v3.2/images/member-4.jpg" alt="Memeber 4" />
+              <div class='member-text'>
+                <p>Dan Oliver</p>
+                <a href='#'>dan.oliver82@example.com</a>
+              </div>
               <p>10/15/20</p>
             </li>
           </ul>
@@ -191,27 +201,39 @@
       <!-- RECENT ACTIVITY -->
       <section class='recent-activity'>
         <h2>RECENT ACTIVITY</h2>
-        <div class='recent-act-contain'>
+        <div class='recent-act-contain col-2'>
           <ul class='recent-mem'>
             <li>
               <img src="web_app_dashboard_v3.2/images/member-1.jpg" alt="Memebr 1" />
+              <div class='recent-text'>
               <p>Victoria Chambers commented on <b>WebApps's SEO Tips</b></p>
               <p>4 hours ago</p>
+              </div>
+              <p>&gt;</p>
             </li>
             <li>
               <img src="web_app_dashboard_v3.2/images/member-2.jpg" alt="Memebr 2" />
+              <div class='recent-text'>
               <p>Dale Byrd liked the post <b>Facebook's Changes for 2021</b></p>
               <p>5 hours ago</p>
+              </div>
+              <p>&gt;</p>
             </li>
             <li>
               <img src="web_app_dashboard_v3.2/images/member-3.jpg" alt="Memebr 3" />
+              <div class='recent-text'>
               <p>Dawn Wood commented on <b>Facebook's Changes for 2021</b></p>
               <p>5 hours ago</p>
+              </div>
+              <p>&gt;</p>
             </li>
             <li>
               <img src="web_app_dashboard_v3.2/images/member-4.jpg" alt="Memebr 4" />
+              <div class='recent-text'>
               <p>Dan Oliver posted <b>WebApp's SEO Tips</b></p>
               <p>1 day ago</p>
+              </div>
+              <p>&gt;</p>
             </li>
           </ul>
         </div>
@@ -220,7 +242,7 @@
       <!-- MESSAGE USER -->
       <section class='message-user'>
         <h2>MESSAGE USER</h2>
-        <div class='message-user-contain'>
+        <div class='message-user-contain col-1'>
           <input type='text' id='user-search' placeholder='Search for User'>
           <textarea placeholder='Message for User'></textarea>
           <button type='submit'>SEND</button>
@@ -229,7 +251,7 @@
       <!-- SETTINGS WIDGET -->
       <section class='settings'>
         <h2>SETTINGS</h2>
-        <div class='settings-contain'>
+        <div class='settings-contain col-2'>
           <form action='POST'>
             <label class="switch-light switch-ios" onclick="">
               <input type="checkbox">

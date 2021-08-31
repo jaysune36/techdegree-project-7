@@ -3,15 +3,22 @@
 ======================================*/
 
 .header-container,
-.aside-container,
-.alert,
-.social-contain,
-.new-mem-contain,
-.recent-act-contain,
-.message-user-contain,
-.settings-contain{
+.traffic-nav,
+.col-1,
+.col-2 {
+// .alert,
+// .traffic-nav,
+// .social-contain,
+// .new-mem-contain,
+// .recent-act-contain,
+// .message-user-contain,
+// .settings-contain{
   @include center;
-  width: 90%;
+  width: 90vw;
+}
+.aside-container {
+  @include center;
+  width: 95%;
 }
 
 .line-chart,

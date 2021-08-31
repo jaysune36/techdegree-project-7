@@ -38,8 +38,11 @@
     align-self: flex-end;
   }
 }
-.alert,
 .traffic-chart ul {
+  flex-direction: row;
+  justify-content: space-around;
+}
+.alert {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

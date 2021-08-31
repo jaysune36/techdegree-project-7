@@ -31,9 +31,18 @@
   .settings {
     grid-column: 1 / span 2;
   }
-  .daily-chart,
+  .daily-traffic {
+    grid-column: 1 / span 1;
+  }
   .mobile-users {
     grid-column: 2 / span 1;
+  }
+  .daily-traffic h2,
+  .mobile-users h2 {
+    margin-left: 5%;
+  }
+  h2 {
+    margin-left: 2%;
   }
   .header-container,
   .social-contain {
@@ -53,6 +62,14 @@
       margin-bottom: 1em;
     }
   }
+  .traffic-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & li {
+      margin-right: 0;
+    }
+  }
   .mobile-users {
     border-left: 1px solid $border-grey;
   }
@@ -68,23 +85,67 @@
   }
   .facebook-contain,
   .insta-contain {
-    margin-right: 1em;
+    margin-right: .5em;
   }
   .settings label {
     width: 30vw;
+  }
+  .members,
+  .recent-mem {
+    & li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    & .member-text,
+    & .recent-text {
+      padding-left: 1em;
+    }
+    & img {
+      max-width: 75px;
+    }
+    & p {
+      text-align: left;
+    }
+    & li p:nth-child(3) {
+      margin-left: auto;
+    }
+  }
+  .recent-mem li p:nth-child(3) {
+    display: block;
+    font-size: 1.5rem;
+    color: $primary-color;
   }
 }
 
 @media (min-width: 1024px) {
 
-  .daily-chart, 
+  .new-mem-contain,
+  .recent-act-contain,
+  .message-user-contain,
+  .settings-contain {
+    width: 45vw;
+  }
   .new-members,
   .message-user {
-    grid-column: 2 / span 1;
+    grid-column: 1 / span 1;
+    border-right: 1px solid $border-grey;
   }
-  .mobile-users,
   .recent-activity,
   .settings {
     grid-column: 2 / span 1;
+  }
+  .message-user {
+    border-bottom: none;
+  }
+  .settings-button {
+    margin-bottom: 0;
+  }
+  .settings-contain form {
+    display: flex;
+    flex-direction: column;
+    & select {
+      flex-grow: 2;
+    }
   }
 }

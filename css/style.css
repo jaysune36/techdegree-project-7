@@ -369,6 +369,10 @@ ul {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*=====================================
         COMPENENTS PARTIALS
 ======================================*/
@@ -1163,11 +1167,16 @@ h2 {
   margin-left: 5%;
 }
 
+.traffic-nav h2 {
+  margin-left: 0;
+}
+
 .traffic-chart ul {
   padding-inline-start: 0;
-  margin-left: 10%;
-  width: 70%;
   font-size: 0.8rem;
+}
+.traffic-chart ul li {
+  margin-right: 1.5em;
 }
 
 .line-chart,
@@ -1193,23 +1202,15 @@ h2 {
   margin-bottom: 0.5rem;
   padding: 1rem;
 }
-.facebook-contain h3, .facebook-contain h3, .facebook-contain h3,
+.facebook-contain h3,
 .insta-contain h3,
-.insta-contain h3,
-.insta-contain h3,
-.twitter-contain h3,
-.twitter-contain h3,
 .twitter-contain h3 {
   color: #AA99D6;
   font-size: 1rem;
   margin: 0;
 }
-.facebook-contain p, .facebook-contain p, .facebook-contain p,
+.facebook-contain p,
 .insta-contain p,
-.insta-contain p,
-.insta-contain p,
-.twitter-contain p,
-.twitter-contain p,
 .twitter-contain p {
   margin: 0;
   font-size: 2em;
@@ -1221,9 +1222,13 @@ h2 {
   padding-inline-start: 0;
   font-size: 0.75em;
 }
-.members .email,
-.recent-mem .email {
+.members a,
+.recent-mem a {
   color: #AA99D6;
+}
+.members a:hover,
+.recent-mem a:hover {
+  cursor: pointer;
 }
 .members p,
 .recent-mem p {
@@ -1238,6 +1243,10 @@ h2 {
 .recent-mem li:last-child {
   border: none;
   padding-bottom: 0;
+}
+
+.recent-mem li p:nth-child(3) {
+  display: none;
 }
 
 .message-user-contain input {
@@ -1420,8 +1429,12 @@ svg {
   align-self: flex-end;
 }
 
-.alert,
 .traffic-chart ul {
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.alert {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -1445,15 +1458,16 @@ svg {
         GRID COMPONENT
 ======================================*/
 .header-container,
-.aside-container,
-.alert,
-.social-contain,
-.new-mem-contain,
-.recent-act-contain,
-.message-user-contain,
-.settings-contain {
+.traffic-nav,
+.col-1,
+.col-2 {
   margin: 0 auto;
-  width: 90%;
+  width: 90vw;
+}
+
+.aside-container {
+  margin: 0 auto;
+  width: 95%;
 }
 
 .line-chart,
@@ -1505,9 +1519,21 @@ svg {
     grid-column: 1/span 2;
   }
 
-  .daily-chart,
-.mobile-users {
+  .daily-traffic {
+    grid-column: 1/span 1;
+  }
+
+  .mobile-users {
     grid-column: 2/span 1;
+  }
+
+  .daily-traffic h2,
+.mobile-users h2 {
+    margin-left: 5%;
+  }
+
+  h2 {
+    margin-left: 2%;
   }
 
   .header-container,
@@ -1532,6 +1558,15 @@ svg {
     margin-bottom: 1em;
   }
 
+  .traffic-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .traffic-nav li {
+    margin-right: 0;
+  }
+
   .mobile-users {
     border-left: 1px solid #c2c2c2;
   }
@@ -1550,24 +1585,76 @@ svg {
 
   .facebook-contain,
 .insta-contain {
-    margin-right: 1em;
+    margin-right: 0.5em;
   }
 
   .settings label {
     width: 30vw;
   }
+
+  .members li,
+.recent-mem li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .members .member-text, .members .recent-text,
+.recent-mem .member-text,
+.recent-mem .recent-text {
+    padding-left: 1em;
+  }
+  .members img,
+.recent-mem img {
+    max-width: 75px;
+  }
+  .members p,
+.recent-mem p {
+    text-align: left;
+  }
+  .members li p:nth-child(3),
+.recent-mem li p:nth-child(3) {
+    margin-left: auto;
+  }
+
+  .recent-mem li p:nth-child(3) {
+    display: block;
+    font-size: 1.5rem;
+    color: #AA99D6;
+  }
 }
 @media (min-width: 1024px) {
-  .daily-chart,
-.new-members,
+  .new-mem-contain,
+.recent-act-contain,
+.message-user-contain,
+.settings-contain {
+    width: 45vw;
+  }
+
+  .new-members,
 .message-user {
+    grid-column: 1/span 1;
+    border-right: 1px solid #c2c2c2;
+  }
+
+  .recent-activity,
+.settings {
     grid-column: 2/span 1;
   }
 
-  .mobile-users,
-.recent-activity,
-.settings {
-    grid-column: 2/span 1;
+  .message-user {
+    border-bottom: none;
+  }
+
+  .settings-button {
+    margin-bottom: 0;
+  }
+
+  .settings-contain form {
+    display: flex;
+    flex-direction: column;
+  }
+  .settings-contain form select {
+    flex-grow: 2;
   }
 }
 
