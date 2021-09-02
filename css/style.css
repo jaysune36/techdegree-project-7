@@ -1149,6 +1149,12 @@ h1 span {
 .traffic-chart {
   margin-top: 1.5em;
 }
+.traffic-chart .active {
+  background-color: #40bf00;
+  color: #fff;
+  padding: 0.5em 0.75em;
+  border-radius: 20px;
+}
 
 .traffic-chart,
 .daily-traffic,
@@ -1169,14 +1175,17 @@ h2 {
 
 .traffic-nav h2 {
   margin-left: 0;
+  margin-bottom: 0;
 }
 
 .traffic-chart ul {
+  margin-top: 0.5em;
   padding-inline-start: 0;
   font-size: 0.8rem;
+  width: 90%;
 }
-.traffic-chart ul li {
-  margin-right: 1.5em;
+.traffic-chart ul :hover {
+  cursor: pointer;
 }
 
 .line-chart,
@@ -1305,7 +1314,7 @@ h2 {
 }
 
 .settings-button {
-  margin: 1.5em 0;
+  margin: 1em 0;
 }
 .settings-button .button-primary {
   background-color: #AA99D6;
@@ -1398,6 +1407,7 @@ svg {
 .traffic-chart ul,
 .social-contain,
 .message-user-contain,
+.settings-contain,
 .settings-button,
 .bell-icon {
   display: flex;
@@ -1431,7 +1441,8 @@ svg {
 
 .traffic-chart ul {
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .alert {
@@ -1451,6 +1462,11 @@ svg {
 
 .settings-button {
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.settings-contain {
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -1562,9 +1578,17 @@ svg {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
   .traffic-nav li {
     margin-right: 0;
+  }
+
+  .traffic-chart ul {
+    justify-content: flex-end;
+  }
+  .traffic-chart ul li {
+    margin-left: 1em;
   }
 
   .mobile-users {
@@ -1589,7 +1613,7 @@ svg {
   }
 
   .settings label {
-    width: 30vw;
+    width: 25vw;
   }
 
   .members li,
@@ -1647,14 +1671,6 @@ svg {
 
   .settings-button {
     margin-bottom: 0;
-  }
-
-  .settings-contain form {
-    display: flex;
-    flex-direction: column;
-  }
-  .settings-contain form select {
-    flex-grow: 2;
   }
 }
 

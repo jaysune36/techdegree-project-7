@@ -2,6 +2,7 @@ const alertDiv = document.querySelector('.alert');
 const ctxLine = document.getElementById('lineChart');
 const ctxBar = document.getElementById('barChart');
 const ctxPie = document.getElementById('pieChart');
+const traffic = document.getElementById('traffic');
 let stars = [135850, 52122, 148825, 16939, 9763];
 let frameworks = ["React", "Angular", "Vue", "Hyperapp", "Omi"];
 let dailyTrafficData = [60, 105, 165, 125, 225, 200, 100]
@@ -127,6 +128,21 @@ alertDiv.addEventListener('click', (e) => {
       const notification = document.querySelector('.notification')
       alert.removeChild(h2);
       notification.style.display = 'none'
+    }
+  }
+})
+
+traffic.addEventListener('click', (e) => {
+  if (e.target.tagName === 'LI') {
+      const li = e.target;
+      const trafficLinks = document.getElementsByClassName('traffic-link');
+      for (let i = 0; i < trafficLinks.length; i++) {
+        let trafficLink = trafficLinks[i];
+        if (li.className === 'traffic-link') {
+          trafficLink.className += ' active'
+        } else {
+          trafficLink.classList.remove('active');
+        }
     }
   }
 })

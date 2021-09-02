@@ -66,8 +66,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     & li {
       margin-right: 0;
+    }
+  }
+  .traffic-chart ul {
+    justify-content: flex-end;
+    & li {
+      margin-left: 1em;
     }
   }
   .mobile-users {
@@ -88,7 +95,7 @@
     margin-right: .5em;
   }
   .settings label {
-    width: 30vw;
+    width: 25vw;
   }
   .members,
   .recent-mem {
@@ -140,12 +147,5 @@
   }
   .settings-button {
     margin-bottom: 0;
-  }
-  .settings-contain form {
-    display: flex;
-    flex-direction: column;
-    & select {
-      flex-grow: 2;
-    }
   }
 }

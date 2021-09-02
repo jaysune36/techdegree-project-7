@@ -9,6 +9,7 @@
 .traffic-chart ul,
 .social-contain,
 .message-user-contain,
+.settings-contain,
 .settings-button,
 .bell-icon{
   display: flex;
@@ -40,7 +41,8 @@
 }
 .traffic-chart ul {
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 }
 .alert {
   flex-direction: row;
@@ -56,5 +58,9 @@
 }
 .settings-button {
   flex-direction: row;
+  justify-content: space-between;
+}
+.settings-contain {
+  flex-direction: column;
   justify-content: space-between;
 }

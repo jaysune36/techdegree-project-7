@@ -73,6 +73,12 @@ h1 span {
 }
 .traffic-chart {
   margin-top: 1.5em;
+  & .active {
+    background-color: darken(#51F200, 10%);
+    color: $white-color;
+    padding: .5em .75em;
+    border-radius: 20px;
+    }
 }
 .traffic-chart,
 .daily-traffic,
@@ -92,12 +98,15 @@ h2 {
 }
 .traffic-nav h2 {
   margin-left: 0;
+  margin-bottom: 0;
 }
 .traffic-chart ul {
+  margin-top: .5em;
   padding-inline-start: 0;
   font-size: .8rem;
-  & li {
-    margin-right: 1.5em;
+  width: 90%;
+  :hover {
+    cursor: pointer;
   }
 }
 .line-chart,
@@ -219,7 +228,7 @@ h2 {
 }
 
 .settings-button {
-  margin: 1.5em 0;
+  margin: 1em 0;
   & .button-primary {
     background-color: $primary-color;
   }
@@ -247,4 +256,5 @@ h2 {
     color: $border-grey;
   }
 }
+
 
