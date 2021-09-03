@@ -3,21 +3,19 @@ const ctxLine = document.getElementById('lineChart');
 const ctxBar = document.getElementById('barChart');
 const ctxPie = document.getElementById('pieChart');
 const traffic = document.getElementById('traffic');
-let stars = [135850, 52122, 148825, 16939, 9763];
-let frameworks = ["React", "Angular", "Vue", "Hyperapp", "Omi"];
-let dailyTrafficData = [60, 105, 165, 125, 225, 200, 100]
-let dailyTrafficLabel = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-let mobileUserData = [70, 15, 15];
-let mobileUserLabel = ['Desktop', 'Tablet', 'Phones']
-let hourTrafData = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
+const dailyTrafficData = [60, 105, 165, 125, 225, 200, 100]
+const dailyTrafficLabel = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+const mobileUserData = [70, 15, 15];
+const mobileUserLabel = ['Desktop', 'Tablet', 'Phones']
+const hourTrafData = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
   2500];
-let DailyTrafData = [];
-let WeeklyTrafData = [];
-let MontlyTrafData = [];
-let hourTrafLabel = ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'];
-let DailyTrafLabel = [];
-let WeeklyTrafLabel = [];
-let MontlyTrafLabel = [];
+const dailyTrafData = [650, 1050, 900, 1700, 1900, 2100, 2050, 2150, 200, 900];
+const weeklyTrafData = [850, 1350, 900, 1800, 1700, 900, 850, 2200, 2300, 2350];
+const monthlyTrafData = [950, 1050, 1900, 800, 1750, 600, 800, 2100, 2200, 2450];
+const hourTrafLabel = ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'];
+const dailyTrafLabel = ['17-24', '9-12', '2-5', '19-4', '20-7', '6-15', '10-19', '29-10', '1-9', '8-13'];
+const weeklyTrafLabel = ['Mon-Tues', 'Tues-Wed', 'Wed-Thur', 'Thur-Fri', 'Fri-Sat', 'Sat-Sun', 'Sun-Mon', 'Mon-Tues', 'Tues-Wed', 'Wed-Thur'];
+const monthlyTrafLabel = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct'];
 
 function alertMessage() {
   alertDiv.innerHTML = `<h2><b>Alert</b>: You have unread messages</h2><span class='close'>&times;</span>`;
@@ -25,32 +23,42 @@ function alertMessage() {
 
 window.onload = alertMessage();
 
-const lineChart = new Chart(ctxLine, {
-  type: 'line',
-  data: {
-    labels: hourTrafLabel,
-    datasets: [{
-      data: hourTrafData,
-      backgroundColor: "rgba(217,209,234, 0.8)",
-      borderColor: "#AA99D6",
-      borderWidth: 1,
-      fill: true,
-      lineTension: 0.4
-    }]
+let trafficData = {
+  labels: hourTrafLabel,
+  datasets: [{
+    data: hourTrafData,
+    backgroundColor: "rgba(217,209,234, 0.8)",
+    borderColor: "#AA99D6",
+    borderWidth: 1,
+    fill: true,
+    lineTension: 0.4
+  }]
+}
+
+let trafficOptions = {
+  aspectRatio: 2.5,
+  scales: {
+    y: {
+      beginAtZero: true
+    }
   },
-  options: {
-    aspectRatio: 2.5,
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    },
-    plugins: {
-      legend: {
-        display: false
-      }
+  plugins: {
+    legend: {
+      display: false
     }
   }
+}
+
+function updateLineChart(chart, chartLabel, chartData) {
+  chart.data.labels = chartLabel;
+  chart.data.datasets[0].data = chartData;
+  chart.update();
+}
+
+let lineChart = new Chart(ctxLine, {
+  type: 'line',
+  data: trafficData,
+  options: trafficOptions
 })
 
 const barChart = new Chart(ctxBar, {
@@ -138,11 +146,17 @@ traffic.addEventListener('click', (e) => {
       const trafficLinks = document.getElementsByClassName('traffic-link');
       for (let i = 0; i < trafficLinks.length; i++) {
         let trafficLink = trafficLinks[i];
-        if (li.className === 'traffic-link') {
-          trafficLink.className += ' active'
-        } else {
-          trafficLink.classList.remove('active');
-        }
+        trafficLink.className = 'traffic-link';
+    }
+    li.className += ' active'
+    if(li.textContent === 'Hourly') {
+      updateLineChart(lineChart, hourTrafLabel, hourTrafData)
+    } else if(li.textContent === 'Daily') {
+      updateLineChart(lineChart, dailyTrafLabel, dailyTrafData)
+    } else if(li.textContent === 'Weekly') {
+      updateLineChart(lineChart, weeklyTrafLabel, weeklyTrafData)
+    } else if(li.textContent === 'Monthly') {
+      updateLineChart(lineChart, monthlyTrafLabel, monthlyTrafData)
     }
   }
 })
