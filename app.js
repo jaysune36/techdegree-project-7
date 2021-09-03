@@ -3,6 +3,7 @@ const ctxLine = document.getElementById('lineChart');
 const ctxBar = document.getElementById('barChart');
 const ctxPie = document.getElementById('pieChart');
 const traffic = document.getElementById('traffic');
+const userSearch = document.getElementById('user-search')
 const dailyTrafficData = [60, 105, 165, 125, 225, 200, 100]
 const dailyTrafficLabel = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 const mobileUserData = [70, 15, 15];
@@ -128,6 +129,21 @@ const pieChart = new Chart(ctxPie, {
   }
 })
 
+function userSearchInput() {
+  let inputSearchValue = userSearch.value.toLowerCase();
+  let seachPlaceCount = 0;
+  const members = document.querySelectorAll('.member-text p');
+  for(let i=0; i<members.length; i++) {
+    let member = members[i];
+    let memberName = member.textContent
+    if(memberName[seachPlaceCount].toLowerCase().includes(inputSearchValue)) {
+      userSearch.value = `${inputSearchValue}${memberName}`;
+      console.log(memberName)
+      seachPlaceCount++
+    }
+  }
+}
+
 alertDiv.addEventListener('click', (e) => {
   if (e.target.tagName === 'SPAN') {
     if (e.target.className === 'close') {
@@ -159,4 +175,8 @@ traffic.addEventListener('click', (e) => {
       updateLineChart(lineChart, monthlyTrafLabel, monthlyTrafData)
     }
   }
+})
+
+userSearch.addEventListener('keyup', ()=> {
+  userSearchInput();
 })
