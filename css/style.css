@@ -1118,7 +1118,7 @@ h1 span {
 
 .tab-space {
   width: 100%;
-  background-color: #ebebeb;
+  background-color: #f9f9f9;
   border-left: 1px solid #c2c2c2;
   border-bottom: 1px solid #c2c2c2;
 }
@@ -1207,7 +1207,7 @@ h2 {
   width: 100%;
   text-align: left;
   border: 1px solid #c2c2c2;
-  background-color: #ebebeb;
+  background-color: #f9f9f9;
   border-radius: 10px;
   margin-bottom: 0.5rem;
   padding: 1rem;
@@ -1224,7 +1224,7 @@ h2 {
 .twitter-contain p {
   margin: 0;
   font-size: 2em;
-  color: #9f9f9f;
+  color: #adadad;
 }
 
 .members,
@@ -1269,7 +1269,7 @@ h2 {
 }
 .message-user-contain input, .message-user-contain textarea {
   font-size: 0.9rem;
-  background-color: #ebebeb;
+  background-color: #f9f9f9;
   margin-bottom: 1em;
   border-radius: 5px;
   border: 1px solid #c2c2c2;
@@ -1283,6 +1283,21 @@ h2 {
   background-color: #AA99D6;
   color: #fff;
   padding: 1em 0;
+}
+
+.member-ul {
+  border: 1px solid #c2c2c2;
+  display: none;
+  background-color: red;
+  width: 500px;
+  height: 500px;
+}
+.member-ul .member-list {
+  border: 1px solid #c2c2c2;
+  display: none;
+  background-color: red;
+  width: 500px;
+  height: 500px;
 }
 
 .switch-light {
@@ -1321,7 +1336,7 @@ h2 {
   background-color: #AA99D6;
 }
 .settings-button .button-disabled {
-  background-color: #9f9f9f;
+  background-color: #adadad;
 }
 .settings-button .button-primary, .settings-button .button-disabled {
   padding: 0.7em 0;
@@ -1335,7 +1350,7 @@ h2 {
   font-size: 0.9rem;
   width: 100%;
   margin-top: 1.5em;
-  background-color: #ebebeb;
+  background-color: #f9f9f9;
   border-radius: 5px;
   border: 1px solid #c2c2c2;
   padding: 0.75em 0.5em;

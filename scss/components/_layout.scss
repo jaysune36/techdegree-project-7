@@ -196,6 +196,20 @@ h2 {
     padding: 1em 0;
   }
 }
+.member-ul{
+  border: 1px solid $border-grey;
+  display: none;
+  background-color: red;
+  width: 500px;
+  height: 500px;
+  & .member-list {
+    border: 1px solid $border-grey;
+  display: none;
+  background-color: red;
+  width: 500px;
+  height: 500px;
+  }
+}
 
 .switch-light {
     margin-top: 1.5em;

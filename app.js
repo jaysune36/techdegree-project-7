@@ -129,19 +129,26 @@ const pieChart = new Chart(ctxPie, {
   }
 })
 
+const divCreate = document.createElement('div');
+const ulCreate = document.createElement('ul');
 function userSearchInput() {
   let inputSearchValue = userSearch.value.toLowerCase();
-  let seachPlaceCount = 0;
   const members = document.querySelectorAll('.member-text p');
+  let memberList = '';
   for(let i=0; i<members.length; i++) {
     let member = members[i];
     let memberName = member.textContent
-    if(memberName[seachPlaceCount].toLowerCase().includes(inputSearchValue)) {
-      userSearch.value = `${inputSearchValue}${memberName}`;
-      console.log(memberName)
-      seachPlaceCount++
-    }
+    if(inputSearchValue !== '') {
+      if(memberName.toLowerCase().includes(inputSearchValue)) {
+        memberList += `<li>${memberName}</li>`;
+      }
+     }
   }
+  userSearch.appendChild(divCreate);
+  divCreate.appendChild(ulCreate);
+  divCreate.className = 'member-ul'
+  ulCreate.className = 'member-list'
+  ulCreate.innerHTML = memberList;
 }
 
 alertDiv.addEventListener('click', (e) => {
