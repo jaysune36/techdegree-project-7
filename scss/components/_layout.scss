@@ -196,18 +196,14 @@ h2 {
     padding: 1em 0;
   }
 }
-.member-ul{
+ .member-list {
+  position: absolute;
   border: 1px solid $border-grey;
+  border-radius: 0 0 10px 10px;
   display: none;
-  background-color: red;
-  width: 500px;
-  height: 500px;
-  & .member-list {
-    border: 1px solid $border-grey;
-  display: none;
-  background-color: red;
-  width: 500px;
-  height: 500px;
+  background-color: $white-color;
+  & li:hover {
+    background-color: darken($background-light-grey, 10%);
   }
 }
 

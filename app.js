@@ -1,9 +1,14 @@
+
+const divCreate = document.createElement('div');
+const ulCreate = document.createElement('ul');
+const messenger = document.getElementById('messenger');
+const inputSearch = document.querySelector('.message-user-contain input');
 const alertDiv = document.querySelector('.alert');
 const ctxLine = document.getElementById('lineChart');
 const ctxBar = document.getElementById('barChart');
 const ctxPie = document.getElementById('pieChart');
 const traffic = document.getElementById('traffic');
-const userSearch = document.getElementById('user-search')
+const userSearch = document.getElementById('user-search');
 const dailyTrafficData = [60, 105, 165, 125, 225, 200, 100]
 const dailyTrafficLabel = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 const mobileUserData = [70, 15, 15];
@@ -129,12 +134,23 @@ const pieChart = new Chart(ctxPie, {
   }
 })
 
-const divCreate = document.createElement('div');
-const ulCreate = document.createElement('ul');
-function userSearchInput() {
+function createLiElement(appendTo, liClassName) {
+  appendTo.appendChild(divCreate);
+  divCreate.appendChild(ulCreate);
+  ulCreate.className = liClassName
+}
+// creates autocomplete drop down for user-search input
+function autocompleteDropDown() {
   let inputSearchValue = userSearch.value.toLowerCase();
   const members = document.querySelectorAll('.member-text p');
+  const userLabel = document.querySelector('[for=user-search]');
+  createLiElement(userLabel, 'member-list')
+  const memberListClass = document.querySelector('.member-list')
+  // adds member names to varialbe if searched value 
+  // matches
   let memberList = '';
+  // iterates through members list of names to match 
+  // against typed values
   for(let i=0; i<members.length; i++) {
     let member = members[i];
     let memberName = member.textContent
@@ -144,11 +160,17 @@ function userSearchInput() {
       }
      }
   }
-  userSearch.appendChild(divCreate);
-  divCreate.appendChild(ulCreate);
-  divCreate.className = 'member-ul'
-  ulCreate.className = 'member-list'
+  // if memeber list is empty will not display
+  if(memberList !== '') {
+  memberListClass.style.display = 'block';
+  inputSearch.style.marginBottom = '0';
+  inputSearch.style.borderRadius = '5px 5px 0 0'
   ulCreate.innerHTML = memberList;
+  } else {
+    memberListClass.style.display = 'none'
+    inputSearch.style.marginBottom = '1em';
+    inputSearch.style.borderRadius = '5px'
+  }
 }
 
 alertDiv.addEventListener('click', (e) => {
@@ -185,5 +207,29 @@ traffic.addEventListener('click', (e) => {
 })
 
 userSearch.addEventListener('keyup', ()=> {
-  userSearchInput();
+  autocompleteDropDown();
+})
+messenger.addEventListener('mouseover', (e)=> {
+  if(e.target.tagName === 'LI') {
+    let li = e.target;
+    let liValue = li.textContent;
+    let userValue = userSearch.value;
+    userValue = ''
+    userValue = liValue;
+    console.log(userValue)
+  }
+})
+
+messenger.addEventListener('click', (e)=> {
+  if(e.target.tagName === 'LI') {
+    let li = e.target;
+    let liValue = li.textContent;
+    let userValue = userSearch.value
+    userValue = liValue;
+    console.log(userValue)
+    const memberListClass = document.querySelector('.member-list');
+    memberListClass.style.display = 'none';
+    inputSearch.style.marginBottom = '1em';
+    inputSearch.style.borderRadius = '5px'
+  }
 })

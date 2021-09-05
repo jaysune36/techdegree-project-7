@@ -367,6 +367,7 @@ body {
 
 ul {
   list-style-type: none;
+  padding-inline-start: 0;
 }
 
 a {
@@ -1285,19 +1286,15 @@ h2 {
   padding: 1em 0;
 }
 
-.member-ul {
+.member-list {
+  position: absolute;
   border: 1px solid #c2c2c2;
+  border-radius: 0 0 10px 10px;
   display: none;
-  background-color: red;
-  width: 500px;
-  height: 500px;
+  background-color: #fff;
 }
-.member-ul .member-list {
-  border: 1px solid #c2c2c2;
-  display: none;
-  background-color: red;
-  width: 500px;
-  height: 500px;
+.member-list li:hover {
+  background-color: #e0e0e0;
 }
 
 .switch-light {
@@ -1423,6 +1420,7 @@ svg {
 .traffic-chart ul,
 .social-contain,
 .message-user-contain,
+.member-list,
 .settings-contain,
 .settings-button,
 .bell-icon {
@@ -1467,7 +1465,8 @@ svg {
   align-items: center;
 }
 
-.social-contain {
+.social-contain,
+.member-list {
   flex-direction: column;
   align-items: center;
 }
@@ -1491,6 +1490,7 @@ svg {
 ======================================*/
 .header-container,
 .traffic-nav,
+.member-list,
 .col-1,
 .col-2 {
   margin: 0 auto;
@@ -1666,6 +1666,7 @@ svg {
   .new-mem-contain,
 .recent-act-contain,
 .message-user-contain,
+.member-list,
 .settings-contain {
     width: 45vw;
   }
