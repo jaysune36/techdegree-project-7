@@ -15,7 +15,7 @@ img {
 svg {
   @include center;
   width: 100%;
-  display: block;
+  display: inline-block;
   fill: $white-color;
   .aside-nav & {
     width: 50%;

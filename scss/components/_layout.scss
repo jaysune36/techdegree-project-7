@@ -19,17 +19,14 @@ h1 {
 h1 span {
   font-weight: bold;
 }
+#bell-svg:hover {
+  cursor: pointer;
+}
 .user-info h2 {
   font-size: .8rem;
   font-weight: 300;
   color: $white-color;
   margin-left: 0;
-}
-.aside {
-  background-color: $secondary-color;
-  &-nav ul{
-    padding: .5em 0;
-  }      
 }
 .notification {
   background-color: #51F200;
@@ -37,6 +34,42 @@ h1 span {
   width: 5px;
   height: 5px;
   margin-right: 1em;
+  & .notify-container {
+    display: none;
+    width: 50%;
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    padding: 5px;
+    color: $white-color;
+    background-color: $primary-color;
+    border-radius: 10px;
+    border: 1px solid $border-grey;
+  }
+  & span {
+    margin-right: auto;
+  }
+  & .notify-list {
+    font-size: .8rem;
+  }
+  & .notify-list li {
+    margin-bottom: .5em;
+    padding-bottom: .5em;
+    border-bottom: 1px solid $border-grey;
+  }
+  & span:hover,
+  & .notify-list li:hover {
+    cursor: pointer;
+  }
+  & .notify-list li:hover {
+    background-color: darken($background-light-grey, 10%);
+  }
+}
+.aside {
+  background-color: $secondary-color;
+  &-nav ul{
+    padding: .5em 0;
+  }      
 }
 .dashboard {
   text-align: left;

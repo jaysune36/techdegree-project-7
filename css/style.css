@@ -1088,18 +1088,15 @@ h1 span {
   font-weight: bold;
 }
 
+#bell-svg:hover {
+  cursor: pointer;
+}
+
 .user-info h2 {
   font-size: 0.8rem;
   font-weight: 300;
   color: #fff;
   margin-left: 0;
-}
-
-.aside {
-  background-color: #6C617A;
-}
-.aside-nav ul {
-  padding: 0.5em 0;
 }
 
 .notification {
@@ -1108,6 +1105,42 @@ h1 span {
   width: 5px;
   height: 5px;
   margin-right: 1em;
+}
+.notification .notify-container {
+  display: none;
+  width: 50%;
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  padding: 5px;
+  color: #fff;
+  background-color: #AA99D6;
+  border-radius: 10px;
+  border: 1px solid #c2c2c2;
+}
+.notification span {
+  margin-right: auto;
+}
+.notification .notify-list {
+  font-size: 0.8rem;
+}
+.notification .notify-list li {
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #c2c2c2;
+}
+.notification span:hover, .notification .notify-list li:hover {
+  cursor: pointer;
+}
+.notification .notify-list li:hover {
+  background-color: #e0e0e0;
+}
+
+.aside {
+  background-color: #6C617A;
+}
+.aside-nav ul {
+  padding: 0.5em 0;
 }
 
 .dashboard {
@@ -1372,7 +1405,7 @@ img {
 svg {
   margin: 0 auto;
   width: 100%;
-  display: block;
+  display: inline-block;
   fill: #fff;
 }
 .aside-nav svg {
@@ -1423,7 +1456,8 @@ svg {
 .member-list,
 .settings-contain,
 .settings-button,
-.bell-icon {
+.bell-icon,
+.notify-container {
   display: flex;
 }
 
@@ -1444,6 +1478,10 @@ svg {
   width: 80%;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.notify-container {
+  flex-direction: column;
 }
 
 .bell-icon {
@@ -1580,6 +1618,10 @@ svg {
 
   .line-chart {
     width: 90vw;
+  }
+
+  .notify-container {
+    max-width: 20%;
   }
 
   .aside-nav ul {

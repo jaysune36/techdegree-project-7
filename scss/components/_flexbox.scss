@@ -12,7 +12,8 @@
 .member-list,
 .settings-contain,
 .settings-button,
-.bell-icon{
+.bell-icon,
+.notify-container{
   display: flex;
 }
 
@@ -33,6 +34,9 @@
   width: 80%;
   flex-direction: row;
   justify-content: space-between;
+}
+.notify-container {
+  flex-direction: column;
 }
 .bell-icon {
   flex-direction: column-reverse;

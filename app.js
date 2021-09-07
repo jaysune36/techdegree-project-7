@@ -3,6 +3,7 @@ const divCreate = document.createElement('div');
 const ulCreate = document.createElement('ul');
 const messenger = document.getElementById('messenger');
 const inputSearch = document.querySelector('.message-user-contain input');
+const userInfo = document.getElementById('notify-bell')
 const alertDiv = document.querySelector('.alert');
 const ctxLine = document.getElementById('lineChart');
 const ctxBar = document.getElementById('barChart');
@@ -134,9 +135,10 @@ const pieChart = new Chart(ctxPie, {
   }
 })
 
-function createLiElement(appendTo, liClassName) {
+function createLiElement(appendTo, divClassName = null, liClassName) {
   appendTo.appendChild(divCreate);
   divCreate.appendChild(ulCreate);
+  divCreate.className = divClassName
   ulCreate.className = liClassName
 }
 // creates autocomplete drop down for user-search input
@@ -144,7 +146,7 @@ function autocompleteDropDown() {
   let inputSearchValue = userSearch.value.toLowerCase();
   const members = document.querySelectorAll('.member-text p');
   const userLabel = document.querySelector('[for=user-search]');
-  createLiElement(userLabel, 'member-list')
+  createLiElement(userLabel, null ,'member-list')
   const memberListClass = document.querySelector('.member-list')
   // adds member names to varialbe if searched value 
   // matches
@@ -162,10 +164,10 @@ function autocompleteDropDown() {
   }
   // if memeber list is empty will not display
   if(memberList !== '') {
-  memberListClass.style.display = 'block';
-  inputSearch.style.marginBottom = '0';
-  inputSearch.style.borderRadius = '5px 5px 0 0'
-  ulCreate.innerHTML = memberList;
+    memberListClass.style.display = 'block';
+    inputSearch.style.marginBottom = '0';
+    inputSearch.style.borderRadius = '5px 5px 0 0'
+    memberListClass.innerHTML = memberList;
   } else {
     memberListClass.style.display = 'none'
     inputSearch.style.marginBottom = '1em';
@@ -173,14 +175,24 @@ function autocompleteDropDown() {
   }
 }
 
+userInfo.addEventListener('click', (e) => {
+  const notifyList = document.querySelector('.notify-container');
+  const notification = document.querySelector('.notification');
+    if (e.target.id === 'bell-svg') {
+      if(notifyList.style.display === 'none') {
+      notifyList.style.display = 'block';
+      } else {
+      notifyList.style.display = 'none';
+      }
+    }
+})
+
 alertDiv.addEventListener('click', (e) => {
   if (e.target.tagName === 'SPAN') {
     if (e.target.className === 'close') {
       let h2 = e.target.parentNode;
       let alert = h2.parentNode;
-      const notification = document.querySelector('.notification')
       alert.removeChild(h2);
-      notification.style.display = 'none'
     }
   }
 })
