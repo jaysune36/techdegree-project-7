@@ -10,6 +10,7 @@ const ctxBar = document.getElementById('barChart');
 const ctxPie = document.getElementById('pieChart');
 const traffic = document.getElementById('traffic');
 const userSearch = document.getElementById('user-search');
+const settings = document.getElementById('settings')
 const dailyTrafficData = [60, 105, 165, 125, 225, 200, 100]
 const dailyTrafficLabel = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 const mobileUserData = [70, 15, 15];
@@ -28,7 +29,17 @@ function alertMessage() {
   alertDiv.innerHTML = `<h2><b>Alert</b>: You have unread messages</h2><span class='close'>&times;</span>`;
 }
 
+function savedSettings() {
+  const timeZone = settings.querySelector('select');
+  const emailNotify = settings.querySelector('.email-notify input');
+  const profilePublic = settings.querySelector('.profile-public input');
+  timeZone.value = localStorage.getItem('timeZone');
+  emailNotify.checked = JSON.parse(localStorage.getItem('emailNotify'))
+  profilePublic.checked = JSON.parse(localStorage.getItem('profilePublic'))
+}
+
 window.onload = alertMessage();
+window.onload = savedSettings();
 
 let trafficData = {
   labels: hourTrafLabel,
@@ -178,13 +189,13 @@ function autocompleteDropDown() {
 userInfo.addEventListener('click', (e) => {
   const notifyList = document.querySelector('.notify-container');
   const notification = document.querySelector('.notification');
-    if (e.target.id === 'bell-svg') {
-      if(notifyList.style.display === 'none') {
+  if (e.target.id === 'bell-svg') {
+    if(notifyList.style.display === 'none') {
       notifyList.style.display = 'block';
       } else {
       notifyList.style.display = 'none';
       }
-    }
+  }
 })
 
 alertDiv.addEventListener('click', (e) => {
@@ -225,23 +236,54 @@ messenger.addEventListener('mouseover', (e)=> {
   if(e.target.tagName === 'LI') {
     let li = e.target;
     let liValue = li.textContent;
-    let userValue = userSearch.value;
-    userValue = ''
-    userValue = liValue;
-    console.log(userValue)
+    let inputValue = li.parentNode.parentNode.parentNode.previousElementSibling
+    inputValue.value = ''
+    inputValue.value = liValue
   }
 })
 
 messenger.addEventListener('click', (e)=> {
-  if(e.target.tagName === 'LI') {
-    let li = e.target;
-    let liValue = li.textContent;
-    let userValue = userSearch.value
-    userValue = liValue;
-    console.log(userValue)
+  let event = e.target;
+  if(event.tagName === 'LI') {
     const memberListClass = document.querySelector('.member-list');
     memberListClass.style.display = 'none';
     inputSearch.style.marginBottom = '1em';
     inputSearch.style.borderRadius = '5px'
+  }
+  if(event.tagName === 'BUTTON') {
+    e.preventDefault()
+    if(event.type = 'submit') {
+      const userInput = userSearch.value;
+      const messageField = messenger.querySelector('textarea')
+      if(!messageField.value && !userInput) {
+        alert('Pleae enter a User and Message to send')
+      } else if(messageField.value && userInput) {
+        alert('Message Sent!')
+        let input = event.previousElementSibling.previousElementSibling.previousElementSibling
+        let textArea = event.previousElementSibling
+        input.value = '';
+        textArea.value = '';
+      } else if (!userInput) {
+        alert('Pleae enter a User to send Message to')
+      }else if (!messageField.value) {
+        alert('Pleae enter a Message to send to User')
+      }
+    }
+  }
+})
+
+settings.addEventListener('click', (e)=> {
+  let event = e.target;
+  console.log(event)
+  if(event.tagName === 'BUTTON') {
+    if(event.textContent === 'SAVE') {
+      const timeZone = settings.querySelector('select');
+      const emailNotify = settings.querySelector('.email-notify input').checked;
+      const profilePublic = settings.querySelector('.profile-public input').checked;
+      localStorage.setItem('timeZone', timeZone.value)
+      localStorage.setItem('emailNotify', emailNotify)
+      localStorage.setItem('profilePublic', profilePublic)
+      console.log(emailNotify)
+    }
   }
 })
