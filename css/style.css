@@ -359,6 +359,9 @@ template {
 * {
   box-sizing: border-box;
 }
+* ul {
+  padding-inline-start: 0;
+}
 
 body {
   text-align: center;
@@ -1072,6 +1075,7 @@ a {
 
 .header-container {
   padding: 0.5em 0;
+  width: 90%;
 }
 
 .user-info img, .user-info svg {
@@ -1107,6 +1111,7 @@ h1 span {
   margin-right: 1em;
 }
 .notification .notify-container {
+  border: 1px solid #c2c2c2;
   display: none;
   width: 50%;
   position: absolute;
@@ -1116,7 +1121,6 @@ h1 span {
   color: #fff;
   background-color: #AA99D6;
   border-radius: 10px;
-  border: 1px solid #c2c2c2;
 }
 .notification span {
   margin-right: auto;
@@ -1140,6 +1144,8 @@ h1 span {
   background-color: #6C617A;
 }
 .aside-nav ul {
+  margin: 0 auto;
+  width: 80%;
   padding: 0.5em 0;
 }
 
@@ -1162,7 +1168,7 @@ h1 span {
 }
 
 .alert {
-  border: 1px solid #AA99D6;
+  border: 1px solid #c2c2c2;
   border-radius: 5px;
   background-color: #AA99D6;
   color: #fff;
@@ -1232,15 +1238,15 @@ h2 {
 
 .line-chart,
 .bar-chart {
-  padding-top: 1.5rem;
+  padding-top: 0.5rem;
 }
 
 .facebook-contain,
 .insta-contain,
 .twitter-contain {
+  border: 1px solid #c2c2c2;
   width: 100%;
   text-align: left;
-  border: 1px solid #c2c2c2;
   background-color: #f9f9f9;
   border-radius: 10px;
   margin-bottom: 0.5rem;
@@ -1263,7 +1269,6 @@ h2 {
 
 .members,
 .recent-mem {
-  padding-inline-start: 0;
   font-size: 0.75em;
 }
 .members a,
@@ -1302,11 +1307,11 @@ h2 {
   padding: 0.5em;
 }
 .message-user-contain input, .message-user-contain textarea {
+  border: 1px solid #c2c2c2;
   font-size: 0.9rem;
   background-color: #f9f9f9;
   margin-bottom: 1em;
   border-radius: 5px;
-  border: 1px solid #c2c2c2;
 }
 .message-user-contain input::placeholder, .message-user-contain textarea::placeholder {
   color: #c2c2c2;
@@ -1320,8 +1325,8 @@ h2 {
 }
 
 .member-list {
-  position: absolute;
   border: 1px solid #c2c2c2;
+  position: absolute;
   border-radius: 0 0 10px 10px;
   display: none;
   background-color: #fff;
@@ -1377,12 +1382,12 @@ h2 {
 }
 
 .settings-contain select {
+  border: 1px solid #c2c2c2;
   font-size: 0.9rem;
   width: 100%;
   margin-top: 1.5em;
   background-color: #f9f9f9;
   border-radius: 5px;
-  border: 1px solid #c2c2c2;
   padding: 0.75em 0.5em;
 }
 .settings-contain select:invalid {
@@ -1461,27 +1466,42 @@ svg {
   display: flex;
 }
 
-.user-info {
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.header-container {
-  width: 90%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.aside-nav ul {
-  margin: 0 auto;
-  width: 80%;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.notify-container {
+.notify-container,
+.message-user-contain,
+.settings-contain,
+.social-contain,
+.member-list {
   flex-direction: column;
+}
+
+.user-info,
+.aside-nav ul,
+.alert,
+.traffic-chart ul,
+.settings-button {
+  flex-direction: row;
+}
+
+.header-container,
+.aside-nav ul,
+.traffic-chart ul,
+.alert,
+.settings-button,
+.settings-contain {
+  justify-content: space-between;
+}
+
+.user-info,
+.header-container,
+.traffic-chart ul,
+.alert,
+.social-contain,
+.member-list {
+  align-items: center;
+}
+
+.user-info {
+  justify-content: flex-end;
 }
 
 .bell-icon {
@@ -1489,38 +1509,6 @@ svg {
 }
 .bell-icon .notification {
   align-self: flex-end;
-}
-
-.traffic-chart ul {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.alert {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.social-contain,
-.member-list {
-  flex-direction: column;
-  align-items: center;
-}
-
-.message-user-contain {
-  flex-direction: column;
-}
-
-.settings-button {
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.settings-contain {
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 /*=====================================
@@ -1620,6 +1608,10 @@ svg {
     width: 90vw;
   }
 
+  .notification .notify-container {
+    top: 6%;
+  }
+
   .notify-container {
     max-width: 20%;
   }
@@ -1671,7 +1663,7 @@ svg {
   }
 
   .settings label {
-    width: 25vw;
+    width: 50%;
   }
 
   .members li,
@@ -1711,6 +1703,10 @@ svg {
 .member-list,
 .settings-contain {
     width: 45vw;
+  }
+
+  .settings-contain {
+    height: 31.5vh;
   }
 
   .new-members,

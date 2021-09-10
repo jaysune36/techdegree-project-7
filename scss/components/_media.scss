@@ -55,6 +55,9 @@
   .line-chart {
     width: 90vw;
   }
+  .notification .notify-container{
+    top: 6%
+  }
   .notify-container {
     max-width: 20%;
   }
@@ -98,7 +101,7 @@
     margin-right: .5em;
   }
   .settings label {
-    width: 25vw;
+    width: 50%;
   }
   .members,
   .recent-mem {
@@ -136,6 +139,9 @@
   .member-list,
   .settings-contain {
     width: 45vw;
+  }
+  .settings-contain {
+    height: 31.5vh;
   }
   .new-members,
   .message-user {

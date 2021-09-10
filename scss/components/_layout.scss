@@ -7,6 +7,7 @@
 }
 .header-container {
   padding: .5em 0;
+  width: 90%;
 }
 .user-info img, .user-info svg {
   padding: 0 .5em;
@@ -35,6 +36,7 @@ h1 span {
   height: 5px;
   margin-right: 1em;
   & .notify-container {
+    @include border;
     display: none;
     width: 50%;
     position: absolute;
@@ -44,7 +46,6 @@ h1 span {
     color: $white-color;
     background-color: $primary-color;
     border-radius: 10px;
-    border: 1px solid $border-grey;
   }
   & span {
     margin-right: auto;
@@ -55,7 +56,7 @@ h1 span {
   & .notify-list li {
     margin-bottom: .5em;
     padding-bottom: .5em;
-    border-bottom: 1px solid $border-grey;
+    border-bottom: $border-set;
   }
   & span:hover,
   & .notify-list li:hover {
@@ -68,6 +69,8 @@ h1 span {
 .aside {
   background-color: $secondary-color;
   &-nav ul{
+    @include center;
+    width: 80%;
     padding: .5em 0;
   }      
 }
@@ -80,14 +83,14 @@ h1 span {
 .tab-space {
   width: 100%;
   background-color: $background-light-grey;
-  border-left: 1px solid $border-grey;
-  border-bottom: 1px solid $border-grey;
+  border-left: $border-set;
+  border-bottom: $border-set;
 }
 .tab {
   margin-bottom: 1em;
 }
 .alert {
-  border: 1px solid $primary-color;
+  @include border;
   border-radius: 5px;
   background-color: $primary-color;
   color: $white-color;
@@ -121,10 +124,9 @@ h1 span {
 .new-members,
 .recent-activity,
 .message-user {
-  border-bottom: 1px solid $border-grey;
+  border-bottom: $border-set;
   padding-bottom: 1em;
 }
-
 h2 {
     text-align: left;
     font-size: .9rem;
@@ -151,15 +153,15 @@ h2 {
 }
 .line-chart,
 .bar-chart {
-  padding-top: 1.5rem;
+  padding-top: .5rem;
 }
 
 .facebook-contain,
 .insta-contain,
 .twitter-contain {
+  @include border;
   width: 100%;
   text-align: left;
-  border: 1px solid $border-grey;
   background-color: $background-light-grey;
   border-radius: 10px;
   margin-bottom: .5rem;
@@ -175,10 +177,8 @@ h2 {
     color: darken($background-light-grey, 30%);
   }
 }
-
 .members,
 .recent-mem {
-  padding-inline-start: 0;
   font-size: .75em;
   & a {
     color: $primary-color;
@@ -190,7 +190,7 @@ h2 {
     margin: 0;
   }
   & li {
-    border-bottom: 1px solid $border-grey;
+    border-bottom: $border-set;
     padding: 1.5em 0 1.5em 0;
   }
   & li:last-child {
@@ -201,7 +201,6 @@ h2 {
 .recent-mem li p:nth-child(3) {
   display: none;
 }
-
 .message-user-contain {
   & input {
     padding: 1em;
@@ -212,17 +211,17 @@ h2 {
     padding: .5em;
   }
   & input, & textarea {
+    @include border;
     font-size: .9rem;
     background-color: $background-light-grey;
     margin-bottom: 1em;
     border-radius: 5px;
-    border: 1px solid $border-grey;
   }
   & input::placeholder, & textarea::placeholder {
     color: $border-grey;
   }
   & button {
-    border: 1px solid $border-grey;
+    @include border;
     border-radius: 5px;
     background-color: $primary-color;
     color: $white-color;
@@ -230,8 +229,8 @@ h2 {
   }
 }
  .member-list {
+   @include border;
   position: absolute;
-  border: 1px solid $border-grey;
   border-radius: 0 0 10px 10px;
   display: none;
   background-color: $white-color;
@@ -239,7 +238,6 @@ h2 {
     background-color: darken($background-light-grey, 10%);
   }
 }
-
 .switch-light {
     margin-top: 1.5em;
     text-align: left;
@@ -255,7 +253,6 @@ h2 {
     padding-left: .5em;
   }
 }
-
 // Used this to change the background color and
 // add a border for the setting toggle switch
 .switch-ios.switch-light input:checked ~ span {
@@ -270,7 +267,6 @@ h2 {
     border: 2px solid $border-grey;
   }
 }
-
 .settings-button {
   margin: 1em 0;
   & .button-primary {
@@ -284,17 +280,16 @@ h2 {
     color: $white-color;
     width: 48%;
     border-radius: 5px;
-    border: 1px solid $border-grey;
+    @include border;
   }
 }
-
 .settings-contain select {
+  @include border;
   font-size: .9rem;
   width: 100%;
   margin-top: 1.5em;
   background-color: $background-light-grey;
   border-radius: 5px;
-  border: 1px solid $border-grey;
   padding: .75em .5em;
   &:invalid {
     color: $border-grey;
