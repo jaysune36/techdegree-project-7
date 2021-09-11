@@ -1225,7 +1225,7 @@ h2 {
   font-size: 0.8rem;
   width: 90%;
 }
-.traffic-chart ul :hover {
+.traffic-chart ul li:hover {
   cursor: pointer;
 }
 
@@ -1323,6 +1323,9 @@ h2 {
   color: #fff;
   padding: 1em 0;
 }
+.message-user-contain button:hover {
+  cursor: pointer;
+}
 
 .member-list {
   border: 1px solid #c2c2c2;
@@ -1379,6 +1382,9 @@ h2 {
   width: 48%;
   border-radius: 5px;
   border: 1px solid #c2c2c2;
+}
+.settings-button .button-primary:hover, .settings-button .button-disabled:hover {
+  cursor: pointer;
 }
 
 .settings-contain select {

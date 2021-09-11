@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const ctxPie = document.getElementById('pieChart');
   const traffic = document.getElementById('traffic');
   const userSearch = document.getElementById('user-search');
-  const settings = document.getElementById('settings')
+  const settings = document.getElementById('settings');
   // adds member names to varialbe if searched value 
   // matches
   let memberList = '';
@@ -157,6 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function alertMessage() {
     alertDiv.innerHTML = `<h2><b>Alert</b>: You have unread messages</h2><span class='close'>&times;</span>`;
   }
+  //resets layout of the user input search field
+  function resetUserSearchLayout(marginBottom, borderRadius) {
+    inputSearch.style.marginBottom = marginBottom;
+    inputSearch.style.borderRadius = borderRadius;
+  }
   function updateLineChart(chart, chartLabel, chartData) {
     chart.data.labels = chartLabel;
     chart.data.datasets[0].data = chartData;
@@ -169,35 +174,32 @@ document.addEventListener('DOMContentLoaded', () => {
     ulCreate.className = liClassName
   }
   // creates autocomplete drop down for user-search input
-  function autocompleteDropDown(inputValue) {
-    let inputSearchValue = inputValue.toLowerCase();
+  function autocompleteDropDown() {
+    let inputSearchValue = userSearch.value.toLowerCase();
     const members = document.querySelectorAll('.member-text p');
     const userLabel = document.querySelector('[for=user-search]');
     createLiElement(userLabel, null, 'member-list')
-    const memberListClass = document.querySelector('.member-list')
+    let memberList = '';
+    const memberListClass = document.querySelector('.member-list');
     // iterates through members list of names to match 
     // against typed values
     for (let i = 0; i < members.length; i++) {
       let member = members[i];
       let memberName = member.textContent
-      if (inputSearchValue !== '') {
+      if (inputSearchValue !== ' ') {
         if (memberName.toLowerCase().includes(inputSearchValue)) {
           memberList += `<li>${memberName}</li>`;
         }
-      } else {
-        return null
-      }
+      } 
     }
     // if memeber list is empty will not display
     if (memberList !== '') {
       memberListClass.style.display = 'block';
-      inputSearch.style.marginBottom = '0';
-      inputSearch.style.borderRadius = '5px 5px 0 0'
       memberListClass.innerHTML = memberList;
+      resetUserSearchLayout('0', '5px 5px 0 0');
     } else {
-      memberListClass.style.display = 'none'
-      inputSearch.style.marginBottom = '1em';
-      inputSearch.style.borderRadius = '5px'
+      resetUserSearchLayout('1em', '5px');
+      memberListClass.style.display = 'none';
     }
   }
   function savedSettings() {
@@ -209,17 +211,17 @@ document.addEventListener('DOMContentLoaded', () => {
     profilePublic.checked = JSON.parse(localStorage.getItem('profilePublic'))
   }
   userInfo.addEventListener('click', (e) => {
-    const notifyList = document.querySelector('.notify-container');
+    const notifyListContain = document.querySelector('.notify-container');
     const notification = document.querySelector('.notification');
     if (e.target.id === 'bell-svg') {
       if (notifyWindow === false) {
-        notifyList.style.display = 'block'
+        notification.style.backgroundColor = '#AA99D6';
+        notifyListContain.style.display = 'block'
         notifyWindow = true;
       } else {
-        notifyList.style.display = 'none'
+        notifyListContain.style.display = 'none'
         notifyWindow = false
       }
-
     }
   })
 
@@ -254,8 +256,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  userSearch.addEventListener('keyup', (e) => {
-    autocompleteDropDown(e.target.value);
+  userSearch.addEventListener('keyup', () => {
+    return autocompleteDropDown();
   })
   messenger.addEventListener('mouseover', (e) => {
     if (e.target.tagName === 'LI') {
@@ -269,11 +271,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   messenger.addEventListener('click', (e) => {
     let event = e.target;
-    if (event.tagName === 'LI') {
-      const memberListClass = document.querySelector('.member-list');
+    const memberListClass = document.querySelector('.member-list');
+    if(event.id !== 'member-list') {
       memberListClass.style.display = 'none';
-      inputSearch.style.marginBottom = '1em';
-      inputSearch.style.borderRadius = '5px'
+      resetUserSearchLayout('1em', '5px');
+    }
+    if (event.tagName === 'LI') {
+      memberListClass.style.display = 'none';
+      resetUserSearchLayout('1em', '5px');
     }
     if (event.tagName === 'BUTTON') {
       e.preventDefault()
@@ -299,16 +304,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   settings.addEventListener('click', (e) => {
     let event = e.target;
+    const timeZone = settings.querySelector('select');
+        const emailNotify = settings.querySelector('.email-notify input');
+        const profilePublic = settings.querySelector('.profile-public input');
     console.log(event)
     if (event.tagName === 'BUTTON') {
       if (event.textContent === 'SAVE') {
-        const timeZone = settings.querySelector('select');
-        const emailNotify = settings.querySelector('.email-notify input').checked;
-        const profilePublic = settings.querySelector('.profile-public input').checked;
         localStorage.setItem('timeZone', timeZone.value)
-        localStorage.setItem('emailNotify', emailNotify)
-        localStorage.setItem('profilePublic', profilePublic)
-        console.log(emailNotify)
+        localStorage.setItem('emailNotify', emailNotify.checked)
+        localStorage.setItem('profilePublic', profilePublic.checked)
+      }
+      if(event.textContent === 'CANCEL') {
+        timeZone.options[0]
+        emailNotify.checked = false;
+        profilePublic.checked = false;
+        localStorage.clear()
       }
     }
   })

@@ -141,7 +141,7 @@ h2 {
   padding-inline-start: 0;
   font-size: .8rem;
   width: 90%;
-  :hover {
+  & li:hover {
     cursor: pointer;
   }
 }
@@ -227,6 +227,9 @@ h2 {
     color: $white-color;
     padding: 1em 0;
   }
+  & button:hover {
+    cursor: pointer;
+  }
 }
  .member-list {
    @include border;
@@ -281,6 +284,9 @@ h2 {
     width: 48%;
     border-radius: 5px;
     @include border;
+  }
+  & .button-primary:hover, & .button-disabled:hover {
+    cursor: pointer;
   }
 }
 .settings-contain select {
