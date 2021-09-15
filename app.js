@@ -206,7 +206,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeZone = settings.querySelector('select');
     const emailNotify = settings.querySelector('.email-notify input');
     const profilePublic = settings.querySelector('.profile-public input');
+    if(localStorage.getItem('timeZone')) {
     timeZone.value = localStorage.getItem('timeZone');
+    } else {
+      return timeZone.selectedIndex = 0;
+    }
     emailNotify.checked = JSON.parse(localStorage.getItem('emailNotify'))
     profilePublic.checked = JSON.parse(localStorage.getItem('profilePublic'))
   }
@@ -315,12 +319,12 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('profilePublic', profilePublic.checked)
       }
       if(event.textContent === 'CANCEL') {
-        timeZone.options[0]
+        timeZone.selectedIndex = 0;
         emailNotify.checked = false;
         profilePublic.checked = false;
         localStorage.clear()
+        console.log(timeZone)
       }
     }
   })
-
 })

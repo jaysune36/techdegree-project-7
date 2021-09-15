@@ -7,16 +7,24 @@ img {
   min-width: 50px;
   border-radius: 50%;
   .user-info & {
+      // max-height: 32px;
       margin-left: .5em;
       max-width: 100px;
    }
 }
-
 svg {
   @include center;
   width: 100%;
   display: inline-block;
   fill: $white-color;
+  .bell-icon & {
+    transition: transform .5s ease-in-out .1s;
+  }
+  .bell-icon &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    fill-opacity: .5;
+  }
   .aside-nav & {
     width: 50%;
   } 
@@ -26,8 +34,7 @@ svg {
     max-width: 100px;
     margin-right: 0;
     padding-right: 1em;
-    border-right: 1px $border-grey solid;
-   }
+  }
 }
 
 .facebook,

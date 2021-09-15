@@ -4,6 +4,7 @@
 .header-container,
 .aside-nav ul,
 .user-info,
+.student-info,
 .alert,
 .tab,
 .traffic-chart ul,
@@ -24,6 +25,7 @@
   flex-direction: column;
 }
 .user-info,
+.student-info,
 .aside-nav ul,
 .alert,
 .traffic-chart ul,
@@ -39,6 +41,7 @@
    justify-content: space-between;
  }
  .user-info,
+ .student-info,
  .header-container,
  .traffic-chart ul,
  .alert,

@@ -66,12 +66,19 @@ h1 span {
     background-color: darken($background-light-grey, 10%);
   }
 }
+.student-info {
+  max-height: 32px;
+  border-left: 1px $border-grey solid;
+}
 .aside {
   background-color: $secondary-color;
   &-nav ul{
     @include center;
     width: 80%;
     padding: .5em 0;
+  }
+  &-nav li:hover {
+    cursor: pointer;
   }      
 }
 .dashboard {
